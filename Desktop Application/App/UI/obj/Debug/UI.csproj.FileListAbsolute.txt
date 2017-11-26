@@ -12,3 +12,18 @@ C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Applicat
 C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\obj\Debug\UI.csproj.GenerateResource.Cache
 C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\obj\Debug\UI.exe
 C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\obj\Debug\UI.pdb
+E:\Desktop Application\App\UI\bin\Debug\UI.exe.config
+E:\Desktop Application\App\UI\bin\Debug\UI.exe
+E:\Desktop Application\App\UI\bin\Debug\UI.pdb
+E:\Desktop Application\App\UI\bin\Debug\EntityFramework.dll
+E:\Desktop Application\App\UI\bin\Debug\EntityFramework.SqlServer.dll
+E:\Desktop Application\App\UI\bin\Debug\log4net.dll
+E:\Desktop Application\App\UI\bin\Debug\EntityFramework.xml
+E:\Desktop Application\App\UI\bin\Debug\EntityFramework.SqlServer.xml
+E:\Desktop Application\App\UI\bin\Debug\log4net.xml
+E:\Desktop Application\App\UI\obj\Debug\UI.csprojResolveAssemblyReference.cache
+E:\Desktop Application\App\UI\obj\Debug\UI.Form2.resources
+E:\Desktop Application\App\UI\obj\Debug\UI.Properties.Resources.resources
+E:\Desktop Application\App\UI\obj\Debug\UI.csproj.GenerateResource.Cache
+E:\Desktop Application\App\UI\obj\Debug\UI.exe
+E:\Desktop Application\App\UI\obj\Debug\UI.pdb
