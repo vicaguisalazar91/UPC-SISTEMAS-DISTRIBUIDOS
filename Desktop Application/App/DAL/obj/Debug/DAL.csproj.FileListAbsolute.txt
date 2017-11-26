@@ -7,6 +7,5 @@ C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Applicat
 C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\DAL\bin\Debug\EntityFramework.xml
 C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\DAL\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\DAL\bin\Debug\log4net.xml
-C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
 C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\DAL\obj\Debug\DAL.dll
 C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\DAL\obj\Debug\DAL.pdb

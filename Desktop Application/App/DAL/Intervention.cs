@@ -20,5 +20,6 @@ namespace DAL
         public int StageId { get; set; }
     
         public virtual Competitor Competitor { get; set; }
+        public virtual Stage Stage { get; set; }
     }
 }

@@ -91,23 +91,30 @@
           <Property Name="TeamId" Type="int" Nullable="false" />
           <Property Name="NumberId" Type="int" Nullable="false" />
         </EntityType>
+        <!--Errores durante la generación:
+advertencia 6013: La tabla o vista 'DB_Olympics.dbo.Tm_Audit' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
         <EntityType Name="Tm_Audit">
-          <Key>
-            <PropertyRef Name="ModifyId" />
-          </Key>
           <Property Name="TableId" Type="varchar" MaxLength="80" />
           <Property Name="ActionId" Type="varchar" MaxLength="80" />
           <Property Name="AuditDate" Type="datetime" />
           <Property Name="UserId" Type="varchar" MaxLength="80" />
-          <Property Name="ModifyId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ModifyId" Type="int" />
+        </EntityType>-->
+        <EntityType Name="Track">
+          <Key>
+            <PropertyRef Name="TrackId" />
+          </Key>
+          <Property Name="TrackId" Type="int" Nullable="false" />
+          <Property Name="TrackLength" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="difficultylevel" Type="varchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="Track_Route">
           <Key>
             <PropertyRef Name="RouteId" />
-            <PropertyRef Name="CoTrack" />
+            <PropertyRef Name="TrackId" />
           </Key>
           <Property Name="RouteId" Type="int" Nullable="false" />
-          <Property Name="CoTrack" Type="int" Nullable="false" />
+          <Property Name="TrackId" Type="int" Nullable="false" />
           <Property Name="SequentialNumber" Type="int" />
         </EntityType>
         <EntityType Name="TryOut">
@@ -127,6 +134,14 @@
           </Key>
           <Property Name="TryOutTypeId" Type="int" Nullable="false" />
           <Property Name="TryOutTypeDescription" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="50" />
+          <Property Name="UserPassword" Type="nvarchar" MaxLength="20" />
         </EntityType>
         <Association Name="Fk_AdministrationFederation">
           <End Role="Federation" Type="Self.Federation" Multiplicity="1" />
@@ -161,6 +176,18 @@
             </Principal>
             <Dependent Role="Competitor">
               <PropertyRef Name="NumberId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Intervention_Stage">
+          <End Role="Stage" Type="Self.Stage" Multiplicity="1" />
+          <End Role="Intervention" Type="Self.Intervention" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stage">
+              <PropertyRef Name="StageId" />
+            </Principal>
+            <Dependent Role="Intervention">
+              <PropertyRef Name="StageId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -200,6 +227,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Route_Stage">
+          <End Role="Stage" Type="Self.Stage" Multiplicity="1" />
+          <End Role="Route" Type="Self.Route" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stage">
+              <PropertyRef Name="StageId" />
+            </Principal>
+            <Dependent Role="Route">
+              <PropertyRef Name="StageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_RouteSeason">
           <End Role="Season" Type="Self.Season" Multiplicity="1" />
           <End Role="Route" Type="Self.Route" Multiplicity="*" />
@@ -233,6 +272,18 @@
             </Principal>
             <Dependent Role="Track_Route">
               <PropertyRef Name="RouteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Track_RouteTrack">
+          <End Role="Track" Type="Self.Track" Multiplicity="1" />
+          <End Role="Track_Route" Type="Self.Track_Route" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Track">
+              <PropertyRef Name="TrackId" />
+            </Principal>
+            <Dependent Role="Track_Route">
+              <PropertyRef Name="TrackId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -271,10 +322,11 @@
           <EntitySet Name="Stage" EntityType="Self.Stage" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Team" EntityType="Self.Team" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TeamMember" EntityType="Self.TeamMember" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Tm_Audit" EntityType="Self.Tm_Audit" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Track" EntityType="Self.Track" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Track_Route" EntityType="Self.Track_Route" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TryOut" EntityType="Self.TryOut" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TryOutType" EntityType="Self.TryOutType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="Fk_AdministrationFederation" Association="Self.Fk_AdministrationFederation">
             <End Role="Federation" EntitySet="Federation" />
             <End Role="Administration" EntitySet="Administration" />
@@ -286,6 +338,10 @@
           <AssociationSet Name="FK_CompetitorSkier" Association="Self.FK_CompetitorSkier">
             <End Role="Skier" EntitySet="Skier" />
             <End Role="Competitor" EntitySet="Competitor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Intervention_Stage" Association="Self.FK_Intervention_Stage">
+            <End Role="Stage" EntitySet="Stage" />
+            <End Role="Intervention" EntitySet="Intervention" />
           </AssociationSet>
           <AssociationSet Name="FK_InterventionCompetitor" Association="Self.FK_InterventionCompetitor">
             <End Role="Competitor" EntitySet="Competitor" />
@@ -299,6 +355,10 @@
             <End Role="Team" EntitySet="Team" />
             <End Role="TeamMember" EntitySet="TeamMember" />
           </AssociationSet>
+          <AssociationSet Name="FK_Route_Stage" Association="Self.FK_Route_Stage">
+            <End Role="Stage" EntitySet="Stage" />
+            <End Role="Route" EntitySet="Route" />
+          </AssociationSet>
           <AssociationSet Name="FK_RouteSeason" Association="Self.FK_RouteSeason">
             <End Role="Season" EntitySet="Season" />
             <End Role="Route" EntitySet="Route" />
@@ -309,6 +369,10 @@
           </AssociationSet>
           <AssociationSet Name="FK_Track_Route" Association="Self.FK_Track_Route">
             <End Role="Route" EntitySet="Route" />
+            <End Role="Track_Route" EntitySet="Track_Route" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Track_RouteTrack" Association="Self.FK_Track_RouteTrack">
+            <End Role="Track" EntitySet="Track" />
             <End Role="Track_Route" EntitySet="Track_Route" />
           </AssociationSet>
           <AssociationSet Name="FK_TryOutType" Association="Self.FK_TryOutType">
@@ -324,24 +388,92 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DB_OlympicsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="DB_OlympicsEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Competitor" EntityType="DB_OlympicsModel.Competitor" />
+          <EntitySet Name="Federation" EntityType="DB_OlympicsModel.Federation" />
+          <EntitySet Name="Intervention" EntityType="DB_OlympicsModel.Intervention" />
+          <EntitySet Name="Route" EntityType="DB_OlympicsModel.Route" />
+          <EntitySet Name="Season" EntityType="DB_OlympicsModel.Season" />
+          <EntitySet Name="Skier" EntityType="DB_OlympicsModel.Skier" />
+          <EntitySet Name="Stage" EntityType="DB_OlympicsModel.Stage" />
+          <EntitySet Name="Team" EntityType="DB_OlympicsModel.Team" />
+          <EntitySet Name="TeamMember" EntityType="DB_OlympicsModel.TeamMember" />
+          <EntitySet Name="Track" EntityType="DB_OlympicsModel.Track" />
+          <EntitySet Name="Track_Route" EntityType="DB_OlympicsModel.Track_Route" />
+          <EntitySet Name="TryOut" EntityType="DB_OlympicsModel.TryOut" />
+          <EntitySet Name="TryOutType" EntityType="DB_OlympicsModel.TryOutType" />
+          <EntitySet Name="User" EntityType="DB_OlympicsModel.User" />
+          <AssociationSet Name="FK_CompetitorSkier" Association="DB_OlympicsModel.FK_CompetitorSkier">
+            <End Role="Skier" EntitySet="Skier" />
+            <End Role="Competitor" EntitySet="Competitor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InterventionCompetitor" Association="DB_OlympicsModel.FK_InterventionCompetitor">
+            <End Role="Competitor" EntitySet="Competitor" />
+            <End Role="Intervention" EntitySet="Intervention" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SkierFederation" Association="DB_OlympicsModel.FK_SkierFederation">
+            <End Role="Federation" EntitySet="Federation" />
+            <End Role="Skier" EntitySet="Skier" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Intervention_Stage" Association="DB_OlympicsModel.FK_Intervention_Stage">
+            <End Role="Stage" EntitySet="Stage" />
+            <End Role="Intervention" EntitySet="Intervention" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Route_Stage" Association="DB_OlympicsModel.FK_Route_Stage">
+            <End Role="Stage" EntitySet="Stage" />
+            <End Role="Route" EntitySet="Route" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RouteSeason" Association="DB_OlympicsModel.FK_RouteSeason">
+            <End Role="Season" EntitySet="Season" />
+            <End Role="Route" EntitySet="Route" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Track_Route" Association="DB_OlympicsModel.FK_Track_Route">
+            <End Role="Route" EntitySet="Route" />
+            <End Role="Track_Route" EntitySet="Track_Route" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MemberSkier" Association="DB_OlympicsModel.FK_MemberSkier">
+            <End Role="Skier" EntitySet="Skier" />
+            <End Role="TeamMember" EntitySet="TeamMember" />
+          </AssociationSet>
+          <AssociationSet Name="PK_StageTryOut" Association="DB_OlympicsModel.PK_StageTryOut">
+            <End Role="TryOut" EntitySet="TryOut" />
+            <End Role="Stage" EntitySet="Stage" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MemberTeam" Association="DB_OlympicsModel.FK_MemberTeam">
+            <End Role="Team" EntitySet="Team" />
+            <End Role="TeamMember" EntitySet="TeamMember" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Track_RouteTrack" Association="DB_OlympicsModel.FK_Track_RouteTrack">
+            <End Role="Track" EntitySet="Track" />
+            <End Role="Track_Route" EntitySet="Track_Route" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TryOutType" Association="DB_OlympicsModel.FK_TryOutType">
+            <End Role="TryOutType" EntitySet="TryOutType" />
+            <End Role="TryOut" EntitySet="TryOut" />
+          </AssociationSet>
+          <AssociationSet Name="Administration" Association="DB_OlympicsModel.Administration">
+            <End Role="Federation" EntitySet="Federation" />
+            <End Role="Season" EntitySet="Season" />
+          </AssociationSet>
+        </EntityContainer>
         <EntityType Name="Competitor">
           <Key>
             <PropertyRef Name="CompetitorId" />
           </Key>
           <Property Name="CompetitorId" Type="Int32" Nullable="false" />
           <Property Name="NumberId" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Skier" Relationship="Self.FK_CompetitorSkier" FromRole="Competitor" ToRole="Skier" />
-          <NavigationProperty Name="Intervention" Relationship="Self.FK_InterventionCompetitor" FromRole="Competitor" ToRole="Intervention" />
+          <NavigationProperty Name="Skier" Relationship="DB_OlympicsModel.FK_CompetitorSkier" FromRole="Competitor" ToRole="Skier" />
+          <NavigationProperty Name="Intervention" Relationship="DB_OlympicsModel.FK_InterventionCompetitor" FromRole="Competitor" ToRole="Intervention" />
         </EntityType>
         <EntityType Name="Federation">
           <Key>
             <PropertyRef Name="FederationID" />
           </Key>
           <Property Name="FederationID" Type="Int32" Nullable="false" />
-          <Property Name="FederationName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FederationName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="FederatedNumber" Type="Int32" />
-          <NavigationProperty Name="Skier" Relationship="Self.FK_SkierFederation" FromRole="Federation" ToRole="Skier" />
-          <NavigationProperty Name="Season" Relationship="Self.Administration" FromRole="Federation" ToRole="Season" />
+          <NavigationProperty Name="Skier" Relationship="DB_OlympicsModel.FK_SkierFederation" FromRole="Federation" ToRole="Skier" />
+          <NavigationProperty Name="Season" Relationship="DB_OlympicsModel.Administration" FromRole="Federation" ToRole="Season" />
         </EntityType>
         <EntityType Name="Intervention">
           <Key>
@@ -352,7 +484,8 @@
           <Property Name="PositionNumber" Type="Int32" />
           <Property Name="TryOutDurationTime" Type="Time" Precision="7" />
           <Property Name="StageId" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Competitor" Relationship="Self.FK_InterventionCompetitor" FromRole="Intervention" ToRole="Competitor" />
+          <NavigationProperty Name="Competitor" Relationship="DB_OlympicsModel.FK_InterventionCompetitor" FromRole="Intervention" ToRole="Competitor" />
+          <NavigationProperty Name="Stage" Relationship="DB_OlympicsModel.FK_Intervention_Stage" FromRole="Intervention" ToRole="Stage" />
         </EntityType>
         <EntityType Name="Route">
           <Key>
@@ -361,34 +494,35 @@
           <Property Name="RouteId" Type="Int32" Nullable="false" />
           <Property Name="SeasonId" Type="Int32" Nullable="false" />
           <Property Name="StageId" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Season" Relationship="Self.FK_RouteSeason" FromRole="Route" ToRole="Season" />
-          <NavigationProperty Name="Track_Route" Relationship="Self.FK_Track_Route" FromRole="Route" ToRole="Track_Route" />
+          <NavigationProperty Name="Stage" Relationship="DB_OlympicsModel.FK_Route_Stage" FromRole="Route" ToRole="Stage" />
+          <NavigationProperty Name="Season" Relationship="DB_OlympicsModel.FK_RouteSeason" FromRole="Route" ToRole="Season" />
+          <NavigationProperty Name="Track_Route" Relationship="DB_OlympicsModel.FK_Track_Route" FromRole="Route" ToRole="Track_Route" />
         </EntityType>
         <EntityType Name="Season">
           <Key>
             <PropertyRef Name="SeasonId" />
           </Key>
           <Property Name="SeasonId" Type="Int32" Nullable="false" />
-          <Property Name="SeasonName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="ContactName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="SeasonAddress" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SeasonName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ContactName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="SeasonAddress" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="SeasonPhone" Type="Int32" Nullable="false" />
           <Property Name="kilometersNumber" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="QtTracks" Type="Int32" />
-          <NavigationProperty Name="Route" Relationship="Self.FK_RouteSeason" FromRole="Season" ToRole="Route" />
-          <NavigationProperty Name="Federation" Relationship="Self.Administration" FromRole="Season" ToRole="Federation" />
+          <NavigationProperty Name="Route" Relationship="DB_OlympicsModel.FK_RouteSeason" FromRole="Season" ToRole="Route" />
+          <NavigationProperty Name="Federation" Relationship="DB_OlympicsModel.Administration" FromRole="Season" ToRole="Federation" />
         </EntityType>
         <EntityType Name="Skier">
           <Key>
             <PropertyRef Name="NumberId" />
           </Key>
           <Property Name="NumberId" Type="Int32" Nullable="false" />
-          <Property Name="SkierName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SkierName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="Birthdate" Type="DateTime" Precision="3" />
           <Property Name="FederationID" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Competitor" Relationship="Self.FK_CompetitorSkier" FromRole="Skier" ToRole="Competitor" />
-          <NavigationProperty Name="Federation" Relationship="Self.FK_SkierFederation" FromRole="Skier" ToRole="Federation" />
-          <NavigationProperty Name="TeamMember" Relationship="Self.FK_MemberSkier" FromRole="Skier" ToRole="TeamMember" />
+          <NavigationProperty Name="Competitor" Relationship="DB_OlympicsModel.FK_CompetitorSkier" FromRole="Skier" ToRole="Competitor" />
+          <NavigationProperty Name="Federation" Relationship="DB_OlympicsModel.FK_SkierFederation" FromRole="Skier" ToRole="Federation" />
+          <NavigationProperty Name="TeamMember" Relationship="DB_OlympicsModel.FK_MemberSkier" FromRole="Skier" ToRole="TeamMember" />
         </EntityType>
         <EntityType Name="Stage">
           <Key>
@@ -396,17 +530,19 @@
           </Key>
           <Property Name="StageId" Type="Int32" Nullable="false" />
           <Property Name="TryOutId" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="TryOut" Relationship="Self.PK_StageTryOut" FromRole="Stage" ToRole="TryOut" />
+          <NavigationProperty Name="Intervention" Relationship="DB_OlympicsModel.FK_Intervention_Stage" FromRole="Stage" ToRole="Intervention" />
+          <NavigationProperty Name="Route" Relationship="DB_OlympicsModel.FK_Route_Stage" FromRole="Stage" ToRole="Route" />
+          <NavigationProperty Name="TryOut" Relationship="DB_OlympicsModel.PK_StageTryOut" FromRole="Stage" ToRole="TryOut" />
         </EntityType>
         <EntityType Name="Team">
           <Key>
             <PropertyRef Name="TeamId" />
           </Key>
           <Property Name="TeamId" Type="Int32" Nullable="false" />
-          <Property Name="TeamName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="CoachName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TeamName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CoachName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="SkiersNumber" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="TeamMember" Relationship="Self.FK_MemberTeam" FromRole="Team" ToRole="TeamMember" />
+          <NavigationProperty Name="TeamMember" Relationship="DB_OlympicsModel.FK_MemberTeam" FromRole="Team" ToRole="TeamMember" />
         </EntityType>
         <EntityType Name="TeamMember">
           <Key>
@@ -415,43 +551,61 @@
           <Property Name="TeamMemberId" Type="Int32" Nullable="false" />
           <Property Name="TeamId" Type="Int32" Nullable="false" />
           <Property Name="NumberId" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Skier" Relationship="Self.FK_MemberSkier" FromRole="TeamMember" ToRole="Skier" />
-          <NavigationProperty Name="Team" Relationship="Self.FK_MemberTeam" FromRole="TeamMember" ToRole="Team" />
+          <NavigationProperty Name="Skier" Relationship="DB_OlympicsModel.FK_MemberSkier" FromRole="TeamMember" ToRole="Skier" />
+          <NavigationProperty Name="Team" Relationship="DB_OlympicsModel.FK_MemberTeam" FromRole="TeamMember" ToRole="Team" />
+        </EntityType>
+        <EntityType Name="Track">
+          <Key>
+            <PropertyRef Name="TrackId" />
+          </Key>
+          <Property Name="TrackId" Type="Int32" Nullable="false" />
+          <Property Name="TrackLength" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="difficultylevel" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Track_Route" Relationship="DB_OlympicsModel.FK_Track_RouteTrack" FromRole="Track" ToRole="Track_Route" />
         </EntityType>
         <EntityType Name="Track_Route">
           <Key>
             <PropertyRef Name="RouteId" />
-            <PropertyRef Name="CoTrack" />
+            <PropertyRef Name="TrackId" />
           </Key>
           <Property Name="RouteId" Type="Int32" Nullable="false" />
-          <Property Name="CoTrack" Type="Int32" Nullable="false" />
+          <Property Name="TrackId" Type="Int32" Nullable="false" />
           <Property Name="SequentialNumber" Type="Int32" />
-          <NavigationProperty Name="Route" Relationship="Self.FK_Track_Route" FromRole="Track_Route" ToRole="Route" />
+          <NavigationProperty Name="Route" Relationship="DB_OlympicsModel.FK_Track_Route" FromRole="Track_Route" ToRole="Route" />
+          <NavigationProperty Name="Track" Relationship="DB_OlympicsModel.FK_Track_RouteTrack" FromRole="Track_Route" ToRole="Track" />
         </EntityType>
         <EntityType Name="TryOut">
           <Key>
             <PropertyRef Name="TryOutId" />
           </Key>
           <Property Name="TryOutId" Type="Int32" Nullable="false" />
-          <Property Name="TryOutName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TryOutName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="TryOutDate" Type="DateTime" Precision="3" />
           <Property Name="TryOutWinnerId" Type="Int32" />
           <Property Name="TryOutDurationTime" Type="Time" Precision="7" />
           <Property Name="TryOutTypeId" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Stage" Relationship="Self.PK_StageTryOut" FromRole="TryOut" ToRole="Stage" />
-          <NavigationProperty Name="TryOutType" Relationship="Self.FK_TryOutType" FromRole="TryOut" ToRole="TryOutType" />
+          <NavigationProperty Name="Stage" Relationship="DB_OlympicsModel.PK_StageTryOut" FromRole="TryOut" ToRole="Stage" />
+          <NavigationProperty Name="TryOutType" Relationship="DB_OlympicsModel.FK_TryOutType" FromRole="TryOut" ToRole="TryOutType" />
         </EntityType>
         <EntityType Name="TryOutType">
           <Key>
             <PropertyRef Name="TryOutTypeId" />
           </Key>
           <Property Name="TryOutTypeId" Type="Int32" Nullable="false" />
-          <Property Name="TryOutTypeDescription" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="TryOut" Relationship="Self.FK_TryOutType" FromRole="TryOutType" ToRole="TryOut" />
+          <Property Name="TryOutTypeDescription" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TryOut" Relationship="DB_OlympicsModel.FK_TryOutType" FromRole="TryOutType" ToRole="TryOut" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UserPassword" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
         </EntityType>
         <Association Name="FK_CompetitorSkier">
-          <End Role="Skier" Type="Self.Skier" Multiplicity="1" />
-          <End Role="Competitor" Type="Self.Competitor" Multiplicity="*" />
+          <End Type="DB_OlympicsModel.Skier" Role="Skier" Multiplicity="1" />
+          <End Type="DB_OlympicsModel.Competitor" Role="Competitor" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Skier">
               <PropertyRef Name="NumberId" />
@@ -462,8 +616,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_InterventionCompetitor">
-          <End Role="Competitor" Type="Self.Competitor" Multiplicity="1" />
-          <End Role="Intervention" Type="Self.Intervention" Multiplicity="*" />
+          <End Type="DB_OlympicsModel.Competitor" Role="Competitor" Multiplicity="1" />
+          <End Type="DB_OlympicsModel.Intervention" Role="Intervention" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Competitor">
               <PropertyRef Name="CompetitorId" />
@@ -474,8 +628,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_SkierFederation">
-          <End Role="Federation" Type="Self.Federation" Multiplicity="1" />
-          <End Role="Skier" Type="Self.Skier" Multiplicity="*" />
+          <End Type="DB_OlympicsModel.Federation" Role="Federation" Multiplicity="1" />
+          <End Type="DB_OlympicsModel.Skier" Role="Skier" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Federation">
               <PropertyRef Name="FederationID" />
@@ -485,9 +639,33 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Intervention_Stage">
+          <End Type="DB_OlympicsModel.Stage" Role="Stage" Multiplicity="1" />
+          <End Type="DB_OlympicsModel.Intervention" Role="Intervention" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stage">
+              <PropertyRef Name="StageId" />
+            </Principal>
+            <Dependent Role="Intervention">
+              <PropertyRef Name="StageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Route_Stage">
+          <End Type="DB_OlympicsModel.Stage" Role="Stage" Multiplicity="1" />
+          <End Type="DB_OlympicsModel.Route" Role="Route" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stage">
+              <PropertyRef Name="StageId" />
+            </Principal>
+            <Dependent Role="Route">
+              <PropertyRef Name="StageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_RouteSeason">
-          <End Role="Season" Type="Self.Season" Multiplicity="1" />
-          <End Role="Route" Type="Self.Route" Multiplicity="*" />
+          <End Type="DB_OlympicsModel.Season" Role="Season" Multiplicity="1" />
+          <End Type="DB_OlympicsModel.Route" Role="Route" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Season">
               <PropertyRef Name="SeasonId" />
@@ -498,8 +676,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Track_Route">
-          <End Role="Route" Type="Self.Route" Multiplicity="1" />
-          <End Role="Track_Route" Type="Self.Track_Route" Multiplicity="*" />
+          <End Type="DB_OlympicsModel.Route" Role="Route" Multiplicity="1" />
+          <End Type="DB_OlympicsModel.Track_Route" Role="Track_Route" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Route">
               <PropertyRef Name="RouteId" />
@@ -510,8 +688,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_MemberSkier">
-          <End Role="Skier" Type="Self.Skier" Multiplicity="1" />
-          <End Role="TeamMember" Type="Self.TeamMember" Multiplicity="*" />
+          <End Type="DB_OlympicsModel.Skier" Role="Skier" Multiplicity="1" />
+          <End Type="DB_OlympicsModel.TeamMember" Role="TeamMember" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Skier">
               <PropertyRef Name="NumberId" />
@@ -522,8 +700,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="PK_StageTryOut">
-          <End Role="TryOut" Type="Self.TryOut" Multiplicity="1" />
-          <End Role="Stage" Type="Self.Stage" Multiplicity="*" />
+          <End Type="DB_OlympicsModel.TryOut" Role="TryOut" Multiplicity="1" />
+          <End Type="DB_OlympicsModel.Stage" Role="Stage" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TryOut">
               <PropertyRef Name="TryOutId" />
@@ -534,8 +712,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_MemberTeam">
-          <End Role="Team" Type="Self.Team" Multiplicity="1" />
-          <End Role="TeamMember" Type="Self.TeamMember" Multiplicity="*" />
+          <End Type="DB_OlympicsModel.Team" Role="Team" Multiplicity="1" />
+          <End Type="DB_OlympicsModel.TeamMember" Role="TeamMember" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Team">
               <PropertyRef Name="TeamId" />
@@ -545,9 +723,21 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Track_RouteTrack">
+          <End Type="DB_OlympicsModel.Track" Role="Track" Multiplicity="1" />
+          <End Type="DB_OlympicsModel.Track_Route" Role="Track_Route" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Track">
+              <PropertyRef Name="TrackId" />
+            </Principal>
+            <Dependent Role="Track_Route">
+              <PropertyRef Name="TrackId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_TryOutType">
-          <End Role="TryOutType" Type="Self.TryOutType" Multiplicity="1" />
-          <End Role="TryOut" Type="Self.TryOut" Multiplicity="*" />
+          <End Type="DB_OlympicsModel.TryOutType" Role="TryOutType" Multiplicity="1" />
+          <End Type="DB_OlympicsModel.TryOut" Role="TryOut" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TryOutType">
               <PropertyRef Name="TryOutTypeId" />
@@ -558,74 +748,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="Administration">
-          <End Role="Federation" Type="Self.Federation" Multiplicity="*" />
-          <End Role="Season" Type="Self.Season" Multiplicity="*" />
+          <End Type="DB_OlympicsModel.Federation" Role="Federation" Multiplicity="*" />
+          <End Type="DB_OlympicsModel.Season" Role="Season" Multiplicity="*" />
         </Association>
-        <EntityContainer Name="DB_OlympicsEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Competitor" EntityType="Self.Competitor" />
-          <EntitySet Name="Federation" EntityType="Self.Federation" />
-          <EntitySet Name="Intervention" EntityType="Self.Intervention" />
-          <EntitySet Name="Route" EntityType="Self.Route" />
-          <EntitySet Name="Season" EntityType="Self.Season" />
-          <EntitySet Name="Skier" EntityType="Self.Skier" />
-          <EntitySet Name="Stage" EntityType="Self.Stage" />
-          <EntitySet Name="Team" EntityType="Self.Team" />
-          <EntitySet Name="TeamMember" EntityType="Self.TeamMember" />
-          <EntitySet Name="Track_Route" EntityType="Self.Track_Route" />
-          <EntitySet Name="TryOut" EntityType="Self.TryOut" />
-          <EntitySet Name="TryOutType" EntityType="Self.TryOutType" />
-          <AssociationSet Name="FK_CompetitorSkier" Association="Self.FK_CompetitorSkier">
-            <End Role="Skier" EntitySet="Skier" />
-            <End Role="Competitor" EntitySet="Competitor" />
-          </AssociationSet>
-          <AssociationSet Name="FK_InterventionCompetitor" Association="Self.FK_InterventionCompetitor">
-            <End Role="Competitor" EntitySet="Competitor" />
-            <End Role="Intervention" EntitySet="Intervention" />
-          </AssociationSet>
-          <AssociationSet Name="FK_SkierFederation" Association="Self.FK_SkierFederation">
-            <End Role="Federation" EntitySet="Federation" />
-            <End Role="Skier" EntitySet="Skier" />
-          </AssociationSet>
-          <AssociationSet Name="FK_RouteSeason" Association="Self.FK_RouteSeason">
-            <End Role="Season" EntitySet="Season" />
-            <End Role="Route" EntitySet="Route" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Track_Route" Association="Self.FK_Track_Route">
-            <End Role="Route" EntitySet="Route" />
-            <End Role="Track_Route" EntitySet="Track_Route" />
-          </AssociationSet>
-          <AssociationSet Name="FK_MemberSkier" Association="Self.FK_MemberSkier">
-            <End Role="Skier" EntitySet="Skier" />
-            <End Role="TeamMember" EntitySet="TeamMember" />
-          </AssociationSet>
-          <AssociationSet Name="PK_StageTryOut" Association="Self.PK_StageTryOut">
-            <End Role="TryOut" EntitySet="TryOut" />
-            <End Role="Stage" EntitySet="Stage" />
-          </AssociationSet>
-          <AssociationSet Name="FK_MemberTeam" Association="Self.FK_MemberTeam">
-            <End Role="Team" EntitySet="Team" />
-            <End Role="TeamMember" EntitySet="TeamMember" />
-          </AssociationSet>
-          <AssociationSet Name="FK_TryOutType" Association="Self.FK_TryOutType">
-            <End Role="TryOutType" EntitySet="TryOutType" />
-            <End Role="TryOut" EntitySet="TryOut" />
-          </AssociationSet>
-          <AssociationSet Name="Administration" Association="Self.Administration">
-            <End Role="Federation" EntitySet="Federation" />
-            <End Role="Season" EntitySet="Season" />
-          </AssociationSet>
-          <EntitySet Name="Tm_Audit" EntityType="DB_OlympicsModel.Tm_Audit" />
-        </EntityContainer>
-        <EntityType Name="Tm_Audit">
-          <Key>
-            <PropertyRef Name="ModifyId" />
-          </Key>
-          <Property Name="TableId" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
-          <Property Name="ActionId" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
-          <Property Name="AuditDate" Type="DateTime" Precision="3" />
-          <Property Name="UserId" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
-          <Property Name="ModifyId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -635,137 +760,144 @@
           <EntitySetMapping Name="Competitor">
             <EntityTypeMapping TypeName="DB_OlympicsModel.Competitor">
               <MappingFragment StoreEntitySet="Competitor">
-                <ScalarProperty Name="CompetitorId" ColumnName="CompetitorId" />
                 <ScalarProperty Name="NumberId" ColumnName="NumberId" />
+                <ScalarProperty Name="CompetitorId" ColumnName="CompetitorId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Federation">
             <EntityTypeMapping TypeName="DB_OlympicsModel.Federation">
               <MappingFragment StoreEntitySet="Federation">
-                <ScalarProperty Name="FederationID" ColumnName="FederationID" />
-                <ScalarProperty Name="FederationName" ColumnName="FederationName" />
                 <ScalarProperty Name="FederatedNumber" ColumnName="FederatedNumber" />
+                <ScalarProperty Name="FederationName" ColumnName="FederationName" />
+                <ScalarProperty Name="FederationID" ColumnName="FederationID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Intervention">
             <EntityTypeMapping TypeName="DB_OlympicsModel.Intervention">
               <MappingFragment StoreEntitySet="Intervention">
-                <ScalarProperty Name="CompetitorId" ColumnName="CompetitorId" />
-                <ScalarProperty Name="PositionNumber" ColumnName="PositionNumber" />
-                <ScalarProperty Name="TryOutDurationTime" ColumnName="TryOutDurationTime" />
                 <ScalarProperty Name="StageId" ColumnName="StageId" />
+                <ScalarProperty Name="TryOutDurationTime" ColumnName="TryOutDurationTime" />
+                <ScalarProperty Name="PositionNumber" ColumnName="PositionNumber" />
+                <ScalarProperty Name="CompetitorId" ColumnName="CompetitorId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Route">
             <EntityTypeMapping TypeName="DB_OlympicsModel.Route">
               <MappingFragment StoreEntitySet="Route">
-                <ScalarProperty Name="RouteId" ColumnName="RouteId" />
-                <ScalarProperty Name="SeasonId" ColumnName="SeasonId" />
                 <ScalarProperty Name="StageId" ColumnName="StageId" />
+                <ScalarProperty Name="SeasonId" ColumnName="SeasonId" />
+                <ScalarProperty Name="RouteId" ColumnName="RouteId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Season">
             <EntityTypeMapping TypeName="DB_OlympicsModel.Season">
               <MappingFragment StoreEntitySet="Season">
-                <ScalarProperty Name="SeasonId" ColumnName="SeasonId" />
-                <ScalarProperty Name="SeasonName" ColumnName="SeasonName" />
-                <ScalarProperty Name="ContactName" ColumnName="ContactName" />
-                <ScalarProperty Name="SeasonAddress" ColumnName="SeasonAddress" />
-                <ScalarProperty Name="SeasonPhone" ColumnName="SeasonPhone" />
-                <ScalarProperty Name="kilometersNumber" ColumnName="kilometersNumber" />
                 <ScalarProperty Name="QtTracks" ColumnName="QtTracks" />
+                <ScalarProperty Name="kilometersNumber" ColumnName="kilometersNumber" />
+                <ScalarProperty Name="SeasonPhone" ColumnName="SeasonPhone" />
+                <ScalarProperty Name="SeasonAddress" ColumnName="SeasonAddress" />
+                <ScalarProperty Name="ContactName" ColumnName="ContactName" />
+                <ScalarProperty Name="SeasonName" ColumnName="SeasonName" />
+                <ScalarProperty Name="SeasonId" ColumnName="SeasonId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Skier">
             <EntityTypeMapping TypeName="DB_OlympicsModel.Skier">
               <MappingFragment StoreEntitySet="Skier">
-                <ScalarProperty Name="NumberId" ColumnName="NumberId" />
-                <ScalarProperty Name="SkierName" ColumnName="SkierName" />
-                <ScalarProperty Name="Birthdate" ColumnName="Birthdate" />
                 <ScalarProperty Name="FederationID" ColumnName="FederationID" />
+                <ScalarProperty Name="Birthdate" ColumnName="Birthdate" />
+                <ScalarProperty Name="SkierName" ColumnName="SkierName" />
+                <ScalarProperty Name="NumberId" ColumnName="NumberId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Stage">
             <EntityTypeMapping TypeName="DB_OlympicsModel.Stage">
               <MappingFragment StoreEntitySet="Stage">
-                <ScalarProperty Name="StageId" ColumnName="StageId" />
                 <ScalarProperty Name="TryOutId" ColumnName="TryOutId" />
+                <ScalarProperty Name="StageId" ColumnName="StageId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Team">
             <EntityTypeMapping TypeName="DB_OlympicsModel.Team">
               <MappingFragment StoreEntitySet="Team">
-                <ScalarProperty Name="TeamId" ColumnName="TeamId" />
-                <ScalarProperty Name="TeamName" ColumnName="TeamName" />
-                <ScalarProperty Name="CoachName" ColumnName="CoachName" />
                 <ScalarProperty Name="SkiersNumber" ColumnName="SkiersNumber" />
+                <ScalarProperty Name="CoachName" ColumnName="CoachName" />
+                <ScalarProperty Name="TeamName" ColumnName="TeamName" />
+                <ScalarProperty Name="TeamId" ColumnName="TeamId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TeamMember">
             <EntityTypeMapping TypeName="DB_OlympicsModel.TeamMember">
               <MappingFragment StoreEntitySet="TeamMember">
-                <ScalarProperty Name="TeamMemberId" ColumnName="TeamMemberId" />
-                <ScalarProperty Name="TeamId" ColumnName="TeamId" />
                 <ScalarProperty Name="NumberId" ColumnName="NumberId" />
+                <ScalarProperty Name="TeamId" ColumnName="TeamId" />
+                <ScalarProperty Name="TeamMemberId" ColumnName="TeamMemberId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Track">
+            <EntityTypeMapping TypeName="DB_OlympicsModel.Track">
+              <MappingFragment StoreEntitySet="Track">
+                <ScalarProperty Name="difficultylevel" ColumnName="difficultylevel" />
+                <ScalarProperty Name="TrackLength" ColumnName="TrackLength" />
+                <ScalarProperty Name="TrackId" ColumnName="TrackId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Track_Route">
             <EntityTypeMapping TypeName="DB_OlympicsModel.Track_Route">
               <MappingFragment StoreEntitySet="Track_Route">
-                <ScalarProperty Name="RouteId" ColumnName="RouteId" />
-                <ScalarProperty Name="CoTrack" ColumnName="CoTrack" />
                 <ScalarProperty Name="SequentialNumber" ColumnName="SequentialNumber" />
+                <ScalarProperty Name="TrackId" ColumnName="TrackId" />
+                <ScalarProperty Name="RouteId" ColumnName="RouteId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TryOut">
             <EntityTypeMapping TypeName="DB_OlympicsModel.TryOut">
               <MappingFragment StoreEntitySet="TryOut">
-                <ScalarProperty Name="TryOutId" ColumnName="TryOutId" />
-                <ScalarProperty Name="TryOutName" ColumnName="TryOutName" />
-                <ScalarProperty Name="TryOutDate" ColumnName="TryOutDate" />
-                <ScalarProperty Name="TryOutWinnerId" ColumnName="TryOutWinnerId" />
-                <ScalarProperty Name="TryOutDurationTime" ColumnName="TryOutDurationTime" />
                 <ScalarProperty Name="TryOutTypeId" ColumnName="TryOutTypeId" />
+                <ScalarProperty Name="TryOutDurationTime" ColumnName="TryOutDurationTime" />
+                <ScalarProperty Name="TryOutWinnerId" ColumnName="TryOutWinnerId" />
+                <ScalarProperty Name="TryOutDate" ColumnName="TryOutDate" />
+                <ScalarProperty Name="TryOutName" ColumnName="TryOutName" />
+                <ScalarProperty Name="TryOutId" ColumnName="TryOutId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TryOutType">
             <EntityTypeMapping TypeName="DB_OlympicsModel.TryOutType">
               <MappingFragment StoreEntitySet="TryOutType">
-                <ScalarProperty Name="TryOutTypeId" ColumnName="TryOutTypeId" />
                 <ScalarProperty Name="TryOutTypeDescription" ColumnName="TryOutTypeDescription" />
+                <ScalarProperty Name="TryOutTypeId" ColumnName="TryOutTypeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User">
+            <EntityTypeMapping TypeName="DB_OlympicsModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="UserPassword" ColumnName="UserPassword" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <AssociationSetMapping Name="Administration" TypeName="DB_OlympicsModel.Administration" StoreEntitySet="Administration">
-            <EndProperty Name="Federation">
-              <ScalarProperty Name="FederationID" ColumnName="FederationID" />
-            </EndProperty>
             <EndProperty Name="Season">
               <ScalarProperty Name="SeasonId" ColumnName="SeasonId" />
             </EndProperty>
+            <EndProperty Name="Federation">
+              <ScalarProperty Name="FederationID" ColumnName="FederationID" />
+            </EndProperty>
           </AssociationSetMapping>
-          <EntitySetMapping Name="Tm_Audit">
-            <EntityTypeMapping TypeName="DB_OlympicsModel.Tm_Audit">
-              <MappingFragment StoreEntitySet="Tm_Audit">
-                <ScalarProperty Name="ModifyId" ColumnName="ModifyId" />
-                <ScalarProperty Name="UserId" ColumnName="UserId" />
-                <ScalarProperty Name="AuditDate" ColumnName="AuditDate" />
-                <ScalarProperty Name="ActionId" ColumnName="ActionId" />
-                <ScalarProperty Name="TableId" ColumnName="TableId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

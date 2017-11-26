@@ -95,7 +95,7 @@
     <Compile Include="TeamMember.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Tm_Audit.cs">
+    <Compile Include="Track.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Track_Route.cs">
@@ -105,6 +105,9 @@
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="TryOutType.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="XML.cs" />

@@ -24,6 +24,7 @@ namespace DAL
         public int SeasonId { get; set; }
         public int StageId { get; set; }
     
+        public virtual Stage Stage { get; set; }
         public virtual Season Season { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Track_Route> Track_Route { get; set; }

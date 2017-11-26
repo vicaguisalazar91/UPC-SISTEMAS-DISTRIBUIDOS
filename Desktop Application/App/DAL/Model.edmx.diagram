@@ -5,29 +5,33 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="be3388184056432a90f164e6c63937b2" Name="Diagram1">
-        <EntityTypeShape EntityType="DB_OlympicsModel.Competitor" Width="1.5" PointX="5.25" PointY="6.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB_OlympicsModel.Federation" Width="1.5" PointX="0.75" PointY="4.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB_OlympicsModel.Intervention" Width="1.5" PointX="7.5" PointY="6.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB_OlympicsModel.Route" Width="1.5" PointX="5.25" PointY="2.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB_OlympicsModel.Season" Width="1.5" PointX="3" PointY="2.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB_OlympicsModel.Skier" Width="1.5" PointX="3" PointY="5.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB_OlympicsModel.Stage" Width="1.5" PointX="14.25" PointY="1.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB_OlympicsModel.Team" Width="1.5" PointX="3" PointY="9.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB_OlympicsModel.TeamMember" Width="1.5" PointX="5.25" PointY="9.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB_OlympicsModel.Track_Route" Width="1.5" PointX="7.5" PointY="2.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB_OlympicsModel.TryOut" Width="1.5" PointX="12" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB_OlympicsModel.TryOutType" Width="1.5" PointX="9.25" PointY="1.25" IsExpanded="true" />
-        <AssociationConnector Association="DB_OlympicsModel.FK_CompetitorSkier" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_OlympicsModel.FK_InterventionCompetitor" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_OlympicsModel.FK_SkierFederation" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_OlympicsModel.FK_RouteSeason" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_OlympicsModel.FK_Track_Route" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_OlympicsModel.FK_MemberSkier" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_OlympicsModel.PK_StageTryOut" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_OlympicsModel.FK_MemberTeam" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_OlympicsModel.FK_TryOutType" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_OlympicsModel.Administration" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="DB_OlympicsModel.Tm_Audit" Width="1.5" PointX="7.5" PointY="9" />
+        <EntityTypeShape EntityType="DB_OlympicsModel.Competitor" Width="1.5" PointX="5.25" PointY="12" />
+        <EntityTypeShape EntityType="DB_OlympicsModel.Federation" Width="1.5" PointX="3" PointY="7.75" />
+        <EntityTypeShape EntityType="DB_OlympicsModel.Intervention" Width="1.5" PointX="7.5" PointY="3.75" />
+        <EntityTypeShape EntityType="DB_OlympicsModel.Route" Width="1.5" PointX="7.5" PointY="0.75" />
+        <EntityTypeShape EntityType="DB_OlympicsModel.Season" Width="1.5" PointX="5.25" PointY="7.375" />
+        <EntityTypeShape EntityType="DB_OlympicsModel.Skier" Width="1.5" PointX="3" PointY="11.625" />
+        <EntityTypeShape EntityType="DB_OlympicsModel.Stage" Width="1.5" PointX="5.25" PointY="3.875" />
+        <EntityTypeShape EntityType="DB_OlympicsModel.Team" Width="1.5" PointX="3" PointY="14.875" />
+        <EntityTypeShape EntityType="DB_OlympicsModel.TeamMember" Width="1.5" PointX="5.25" PointY="14.875" />
+        <EntityTypeShape EntityType="DB_OlympicsModel.Track" Width="1.5" PointX="7.5" PointY="7.375" />
+        <EntityTypeShape EntityType="DB_OlympicsModel.Track_Route" Width="1.5" PointX="9.75" PointY="0.875" />
+        <EntityTypeShape EntityType="DB_OlympicsModel.TryOut" Width="1.5" PointX="3" PointY="3.5" />
+        <EntityTypeShape EntityType="DB_OlympicsModel.TryOutType" Width="1.5" PointX="0.75" PointY="4" />
+        <EntityTypeShape EntityType="DB_OlympicsModel.User" Width="1.5" PointX="7.75" PointY="10" />
+        <AssociationConnector Association="DB_OlympicsModel.FK_CompetitorSkier" />
+        <AssociationConnector Association="DB_OlympicsModel.FK_InterventionCompetitor" />
+        <AssociationConnector Association="DB_OlympicsModel.FK_SkierFederation" />
+        <AssociationConnector Association="DB_OlympicsModel.FK_Intervention_Stage" />
+        <AssociationConnector Association="DB_OlympicsModel.FK_Route_Stage" />
+        <AssociationConnector Association="DB_OlympicsModel.FK_RouteSeason" />
+        <AssociationConnector Association="DB_OlympicsModel.FK_Track_Route" />
+        <AssociationConnector Association="DB_OlympicsModel.FK_MemberSkier" />
+        <AssociationConnector Association="DB_OlympicsModel.PK_StageTryOut" />
+        <AssociationConnector Association="DB_OlympicsModel.FK_MemberTeam" />
+        <AssociationConnector Association="DB_OlympicsModel.FK_Track_RouteTrack" />
+        <AssociationConnector Association="DB_OlympicsModel.FK_TryOutType" />
+        <AssociationConnector Association="DB_OlympicsModel.Administration" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

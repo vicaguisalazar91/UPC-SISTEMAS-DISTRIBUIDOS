@@ -15,9 +15,10 @@ namespace DAL
     public partial class Track_Route
     {
         public int RouteId { get; set; }
-        public int CoTrack { get; set; }
+        public int TrackId { get; set; }
         public Nullable<int> SequentialNumber { get; set; }
     
         public virtual Route Route { get; set; }
+        public virtual Track Track { get; set; }
     }
 }

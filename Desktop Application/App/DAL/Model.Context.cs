@@ -15,8 +15,8 @@ namespace DAL
     
     public partial class DB_OlympicsEntities : DbContext
     {
-        public DB_OlympicsEntities(String connectionstring)
-            : base(connectionstring)
+        public DB_OlympicsEntities()
+            : base("name=DB_OlympicsEntities")
         {
         }
     
@@ -34,9 +34,10 @@ namespace DAL
         public virtual DbSet<Stage> Stage { get; set; }
         public virtual DbSet<Team> Team { get; set; }
         public virtual DbSet<TeamMember> TeamMember { get; set; }
+        public virtual DbSet<Track> Track { get; set; }
         public virtual DbSet<Track_Route> Track_Route { get; set; }
         public virtual DbSet<TryOut> TryOut { get; set; }
         public virtual DbSet<TryOutType> TryOutType { get; set; }
-        public virtual DbSet<Tm_Audit> Tm_Audit { get; set; }
+        public virtual DbSet<User> User { get; set; }
     }
 }

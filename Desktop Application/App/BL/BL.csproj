@@ -53,6 +53,7 @@
     <Compile Include="ConfigurationBL.cs" />
     <Compile Include="ConnectionBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceWebBL.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -62,6 +63,10 @@
     <ProjectReference Include="..\DAL\DAL.csproj">
       <Project>{0aa49cca-4ae4-4d1d-850f-f20cd0c74c44}</Project>
       <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SW\SW.csproj">
+      <Project>{4f715f69-be74-4163-9d40-da3ab33991d9}</Project>
+      <Name>SW</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

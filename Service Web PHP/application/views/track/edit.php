@@ -1,0 +1,22 @@
+<?php echo form_open('track/edit/'.$track['TrackId'],array("class"=>"form-horizontal")); ?>
+
+	<div class="form-group">
+		<label for="TrackLength" class="col-md-4 control-label">TrackLength</label>
+		<div class="col-md-8">
+			<input type="text" name="TrackLength" value="<?php echo ($this->input->post('TrackLength') ? $this->input->post('TrackLength') : $track['TrackLength']); ?>" class="form-control" id="TrackLength" />
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="difficultylevel" class="col-md-4 control-label">Difficultylevel</label>
+		<div class="col-md-8">
+			<input type="text" name="difficultylevel" value="<?php echo ($this->input->post('difficultylevel') ? $this->input->post('difficultylevel') : $track['difficultylevel']); ?>" class="form-control" id="difficultylevel" />
+		</div>
+	</div>
+	
+	<div class="form-group">
+		<div class="col-sm-offset-4 col-sm-8">
+			<button type="submit" class="btn btn-success">Save</button>
+        </div>
+	</div>
+	
+<?php echo form_close(); ?>

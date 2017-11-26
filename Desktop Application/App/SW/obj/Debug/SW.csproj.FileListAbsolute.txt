@@ -1,0 +1,10 @@
+C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\SW\bin\Debug\SW.dll.config
+C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\SW\bin\Debug\SW.dll
+C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\SW\bin\Debug\SW.pdb
+C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\SW\bin\Debug\DAL.dll
+C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\SW\bin\Debug\EntityFramework.dll
+C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\SW\bin\Debug\DAL.pdb
+C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\SW\bin\Debug\EntityFramework.xml
+C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\SW\obj\Debug\SW.csprojResolveAssemblyReference.cache
+C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\SW\obj\Debug\SW.dll
+C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\SW\obj\Debug\SW.pdb

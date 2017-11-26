@@ -86,23 +86,30 @@
     <Property Name="TeamId" Type="int" Nullable="false" />
     <Property Name="NumberId" Type="int" Nullable="false" />
   </EntityType>
-  <EntityType Name="Tm_Audit">
+  <!--Errores durante la generación:
+advertencia 6013: La tabla o vista 'DB_Olympics.dbo.Tm_Audit' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
+        <EntityType Name="Tm_Audit">
+          <Property Name="TableId" Type="varchar" MaxLength="80" />
+          <Property Name="ActionId" Type="varchar" MaxLength="80" />
+          <Property Name="AuditDate" Type="datetime" />
+          <Property Name="UserId" Type="varchar" MaxLength="80" />
+          <Property Name="ModifyId" Type="int" />
+        </EntityType>-->
+  <EntityType Name="Track">
     <Key>
-      <PropertyRef Name="ModifyId" />
+      <PropertyRef Name="TrackId" />
     </Key>
-    <Property Name="TableId" Type="varchar" MaxLength="80" />
-    <Property Name="ActionId" Type="varchar" MaxLength="80" />
-    <Property Name="AuditDate" Type="datetime" />
-    <Property Name="UserId" Type="varchar" MaxLength="80" />
-    <Property Name="ModifyId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TrackId" Type="int" Nullable="false" />
+    <Property Name="TrackLength" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="difficultylevel" Type="varchar" MaxLength="100" />
   </EntityType>
   <EntityType Name="Track_Route">
     <Key>
       <PropertyRef Name="RouteId" />
-      <PropertyRef Name="CoTrack" />
+      <PropertyRef Name="TrackId" />
     </Key>
     <Property Name="RouteId" Type="int" Nullable="false" />
-    <Property Name="CoTrack" Type="int" Nullable="false" />
+    <Property Name="TrackId" Type="int" Nullable="false" />
     <Property Name="SequentialNumber" Type="int" />
   </EntityType>
   <EntityType Name="TryOut">
@@ -122,6 +129,14 @@
     </Key>
     <Property Name="TryOutTypeId" Type="int" Nullable="false" />
     <Property Name="TryOutTypeDescription" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="50" />
+    <Property Name="UserPassword" Type="nvarchar" MaxLength="20" />
   </EntityType>
   <Association Name="Fk_AdministrationFederation">
     <End Role="Federation" Type="Self.Federation" Multiplicity="1" />
@@ -156,6 +171,18 @@
       </Principal>
       <Dependent Role="Competitor">
         <PropertyRef Name="NumberId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Intervention_Stage">
+    <End Role="Stage" Type="Self.Stage" Multiplicity="1" />
+    <End Role="Intervention" Type="Self.Intervention" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Stage">
+        <PropertyRef Name="StageId" />
+      </Principal>
+      <Dependent Role="Intervention">
+        <PropertyRef Name="StageId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -195,6 +222,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Route_Stage">
+    <End Role="Stage" Type="Self.Stage" Multiplicity="1" />
+    <End Role="Route" Type="Self.Route" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Stage">
+        <PropertyRef Name="StageId" />
+      </Principal>
+      <Dependent Role="Route">
+        <PropertyRef Name="StageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_RouteSeason">
     <End Role="Season" Type="Self.Season" Multiplicity="1" />
     <End Role="Route" Type="Self.Route" Multiplicity="*" />
@@ -228,6 +267,18 @@
       </Principal>
       <Dependent Role="Track_Route">
         <PropertyRef Name="RouteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Track_RouteTrack">
+    <End Role="Track" Type="Self.Track" Multiplicity="1" />
+    <End Role="Track_Route" Type="Self.Track_Route" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Track">
+        <PropertyRef Name="TrackId" />
+      </Principal>
+      <Dependent Role="Track_Route">
+        <PropertyRef Name="TrackId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -266,10 +317,11 @@
     <EntitySet Name="Stage" EntityType="Self.Stage" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Team" EntityType="Self.Team" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TeamMember" EntityType="Self.TeamMember" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Tm_Audit" EntityType="Self.Tm_Audit" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Track" EntityType="Self.Track" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Track_Route" EntityType="Self.Track_Route" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TryOut" EntityType="Self.TryOut" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TryOutType" EntityType="Self.TryOutType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="Fk_AdministrationFederation" Association="Self.Fk_AdministrationFederation">
       <End Role="Federation" EntitySet="Federation" />
       <End Role="Administration" EntitySet="Administration" />
@@ -281,6 +333,10 @@
     <AssociationSet Name="FK_CompetitorSkier" Association="Self.FK_CompetitorSkier">
       <End Role="Skier" EntitySet="Skier" />
       <End Role="Competitor" EntitySet="Competitor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Intervention_Stage" Association="Self.FK_Intervention_Stage">
+      <End Role="Stage" EntitySet="Stage" />
+      <End Role="Intervention" EntitySet="Intervention" />
     </AssociationSet>
     <AssociationSet Name="FK_InterventionCompetitor" Association="Self.FK_InterventionCompetitor">
       <End Role="Competitor" EntitySet="Competitor" />
@@ -294,6 +350,10 @@
       <End Role="Team" EntitySet="Team" />
       <End Role="TeamMember" EntitySet="TeamMember" />
     </AssociationSet>
+    <AssociationSet Name="FK_Route_Stage" Association="Self.FK_Route_Stage">
+      <End Role="Stage" EntitySet="Stage" />
+      <End Role="Route" EntitySet="Route" />
+    </AssociationSet>
     <AssociationSet Name="FK_RouteSeason" Association="Self.FK_RouteSeason">
       <End Role="Season" EntitySet="Season" />
       <End Role="Route" EntitySet="Route" />
@@ -304,6 +364,10 @@
     </AssociationSet>
     <AssociationSet Name="FK_Track_Route" Association="Self.FK_Track_Route">
       <End Role="Route" EntitySet="Route" />
+      <End Role="Track_Route" EntitySet="Track_Route" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Track_RouteTrack" Association="Self.FK_Track_RouteTrack">
+      <End Role="Track" EntitySet="Track" />
       <End Role="Track_Route" EntitySet="Track_Route" />
     </AssociationSet>
     <AssociationSet Name="FK_TryOutType" Association="Self.FK_TryOutType">
