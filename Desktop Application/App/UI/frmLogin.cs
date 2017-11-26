@@ -16,5 +16,21 @@ namespace UI
         {
             InitializeComponent();
         }
+
+        private void btnIngresar_Click(object sender, EventArgs e)
+        {
+            if (txtuser.Text == "SYSTEM" && txtPassw.Text == "123456")
+            {
+                frmMenu frm = new frmMenu();
+                frmLogin frmlog = new frmLogin();
+                frm.Show();
+                frmlog.Close();
+            }
+            else
+            {
+                MessageBox.Show("Errors, valide contrañse");
+
+            }
+        }
     }
 }
