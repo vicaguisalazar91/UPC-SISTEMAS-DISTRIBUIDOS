@@ -50,6 +50,10 @@
             this.dgvSkier = new System.Windows.Forms.DataGridView();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.NumberId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SkierName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Birthdate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FederationID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSkier)).BeginInit();
@@ -107,9 +111,9 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(487, 26);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(384, 132);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
@@ -119,7 +123,7 @@
             // 
             this.cmbFederation.FormattingEnabled = true;
             this.cmbFederation.Location = new System.Drawing.Point(116, 109);
-            this.cmbFederation.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbFederation.Margin = new System.Windows.Forms.Padding(2);
             this.cmbFederation.Name = "cmbFederation";
             this.cmbFederation.Size = new System.Drawing.Size(264, 21);
             this.cmbFederation.TabIndex = 9;
@@ -128,7 +132,7 @@
             // 
             this.dtpSkierBirthday.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpSkierBirthday.Location = new System.Drawing.Point(116, 87);
-            this.dtpSkierBirthday.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpSkierBirthday.Margin = new System.Windows.Forms.Padding(2);
             this.dtpSkierBirthday.Name = "dtpSkierBirthday";
             this.dtpSkierBirthday.Size = new System.Drawing.Size(84, 20);
             this.dtpSkierBirthday.TabIndex = 8;
@@ -137,7 +141,7 @@
             // txtSkierDocument
             // 
             this.txtSkierDocument.Location = new System.Drawing.Point(116, 67);
-            this.txtSkierDocument.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSkierDocument.Margin = new System.Windows.Forms.Padding(2);
             this.txtSkierDocument.Name = "txtSkierDocument";
             this.txtSkierDocument.Size = new System.Drawing.Size(84, 20);
             this.txtSkierDocument.TabIndex = 7;
@@ -145,7 +149,7 @@
             // txtSkierFullName
             // 
             this.txtSkierFullName.Location = new System.Drawing.Point(116, 47);
-            this.txtSkierFullName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSkierFullName.Margin = new System.Windows.Forms.Padding(2);
             this.txtSkierFullName.Name = "txtSkierFullName";
             this.txtSkierFullName.Size = new System.Drawing.Size(264, 20);
             this.txtSkierFullName.TabIndex = 6;
@@ -153,7 +157,7 @@
             // txtSkierId
             // 
             this.txtSkierId.Location = new System.Drawing.Point(116, 27);
-            this.txtSkierId.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSkierId.Margin = new System.Windows.Forms.Padding(2);
             this.txtSkierId.Name = "txtSkierId";
             this.txtSkierId.Size = new System.Drawing.Size(76, 20);
             this.txtSkierId.TabIndex = 5;
@@ -211,7 +215,7 @@
             // txtSkierFind
             // 
             this.txtSkierFind.Location = new System.Drawing.Point(109, 27);
-            this.txtSkierFind.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSkierFind.Margin = new System.Windows.Forms.Padding(2);
             this.txtSkierFind.Name = "txtSkierFind";
             this.txtSkierFind.Size = new System.Drawing.Size(290, 20);
             this.txtSkierFind.TabIndex = 2;
@@ -229,18 +233,24 @@
             // btnFind
             // 
             this.btnFind.Location = new System.Drawing.Point(403, 27);
-            this.btnFind.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnFind.Margin = new System.Windows.Forms.Padding(2);
             this.btnFind.Name = "btnFind";
             this.btnFind.Size = new System.Drawing.Size(80, 22);
             this.btnFind.TabIndex = 4;
             this.btnFind.Text = "Buscar";
             this.btnFind.UseVisualStyleBackColor = true;
+            this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
             // 
             // dgvSkier
             // 
             this.dgvSkier.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSkier.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.NumberId,
+            this.SkierName,
+            this.Birthdate,
+            this.FederationID});
             this.dgvSkier.Location = new System.Drawing.Point(10, 53);
-            this.dgvSkier.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvSkier.Margin = new System.Windows.Forms.Padding(2);
             this.dgvSkier.Name = "dgvSkier";
             this.dgvSkier.RowTemplate.Height = 24;
             this.dgvSkier.Size = new System.Drawing.Size(473, 256);
@@ -264,6 +274,30 @@
             this.button1.Text = "Guardar";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // NumberId
+            // 
+            this.NumberId.DataPropertyName = "NumberId";
+            this.NumberId.HeaderText = "NumberId";
+            this.NumberId.Name = "NumberId";
+            // 
+            // SkierName
+            // 
+            this.SkierName.DataPropertyName = "SkierName";
+            this.SkierName.HeaderText = "SkierName";
+            this.SkierName.Name = "SkierName";
+            // 
+            // Birthdate
+            // 
+            this.Birthdate.DataPropertyName = "Birthdate";
+            this.Birthdate.HeaderText = "Birthdate";
+            this.Birthdate.Name = "Birthdate";
+            // 
+            // FederationID
+            // 
+            this.FederationID.DataPropertyName = "FederationID";
+            this.FederationID.HeaderText = "FederationID";
+            this.FederationID.Name = "FederationID";
+            // 
             // frmSkier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -278,7 +312,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmSkier";
             this.Text = "Mantenimiento de Esquiadores";
             this.menuStrip1.ResumeLayout(false);
@@ -315,5 +349,9 @@
         private System.Windows.Forms.DataGridView dgvSkier;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NumberId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SkierName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Birthdate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FederationID;
     }
 }

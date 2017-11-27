@@ -50,7 +50,8 @@ namespace TEST
                 List<Federation> lstFederation = JsonConvert.DeserializeObject<List<Federation>>(sr.ReadToEnd());
                 foreach (Federation oFederation in lstFederation)
                 {
-                    Console.WriteLine(oFederation.FederatedNumber);
+                    //Console.WriteLine(oFederation.FederatedNumber);
+                    Console.WriteLine(oFederation.FederationName);
                 }
                 Console.ReadKey();
             }

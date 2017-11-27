@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Model.AccesoDatos;
+using DAL;
 
 namespace UI
 {
@@ -15,6 +17,18 @@ namespace UI
         public frmFederation()
         {
             InitializeComponent();
+            dgvFederation.AutoGenerateColumns = false;
+            
+        }
+
+        private void Buscar()
+        {
+            var federationDA = new FederationDA();            
+            var federation = federationDA.GetFederationList();
+            dgvFederation.DataSource = null;
+            dgvFederation.Refresh();
+            dgvFederation.DataSource = federation;
+
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -24,6 +38,31 @@ namespace UI
 
         private void guardarToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //txtFedeId.Enabled = true;
+            txtFedeName.Enabled = true;
+        }
+
+        private void frmFederation_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Buscar();
+        }
+
+        private void dgvFederation_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var federation = new Federation();
+            federation.FederationID = Int32.Parse( dgvFederation.SelectedRows[0].Cells["FederationID"].Value.ToString());
+            federation.FederationName = dgvFederation.SelectedRows[0].Cells["FederationName"].Value.ToString();
+            federation.FederatedNumber = Int32.Parse(dgvFederation.SelectedRows[0].Cells["FederatedNumber"].Value.ToString());
+
+            
+
+
+
 
         }
     }

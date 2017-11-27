@@ -41,6 +41,10 @@
             this.dgvFederation = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FederationName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FederatedNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFederation)).BeginInit();
@@ -53,9 +57,9 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(379, 27);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(342, 82);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
@@ -64,16 +68,18 @@
             // 
             // txtFedeName
             // 
+            this.txtFedeName.Enabled = false;
             this.txtFedeName.Location = new System.Drawing.Point(86, 47);
-            this.txtFedeName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtFedeName.Margin = new System.Windows.Forms.Padding(2);
             this.txtFedeName.Name = "txtFedeName";
             this.txtFedeName.Size = new System.Drawing.Size(224, 20);
             this.txtFedeName.TabIndex = 3;
             // 
             // txtFedeId
             // 
+            this.txtFedeId.Enabled = false;
             this.txtFedeId.Location = new System.Drawing.Point(86, 21);
-            this.txtFedeId.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtFedeId.Margin = new System.Windows.Forms.Padding(2);
             this.txtFedeId.Name = "txtFedeId";
             this.txtFedeId.Size = new System.Drawing.Size(44, 20);
             this.txtFedeId.TabIndex = 2;
@@ -141,12 +147,17 @@
             // dgvFederation
             // 
             this.dgvFederation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvFederation.Location = new System.Drawing.Point(13, 27);
-            this.dgvFederation.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvFederation.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
+            this.FederationName,
+            this.FederatedNumber});
+            this.dgvFederation.Location = new System.Drawing.Point(13, 74);
+            this.dgvFederation.Margin = new System.Windows.Forms.Padding(2);
             this.dgvFederation.Name = "dgvFederation";
             this.dgvFederation.RowTemplate.Height = 24;
-            this.dgvFederation.Size = new System.Drawing.Size(362, 237);
+            this.dgvFederation.Size = new System.Drawing.Size(362, 190);
             this.dgvFederation.TabIndex = 2;
+            this.dgvFederation.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFederation_CellContentClick);
             // 
             // button1
             // 
@@ -166,20 +177,50 @@
             this.button2.Text = "Salir";
             this.button2.UseVisualStyleBackColor = true;
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(299, 38);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 5;
+            this.button3.Text = "Buscar";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "FederationID";
+            this.Id.HeaderText = "ID";
+            this.Id.Name = "Id";
+            // 
+            // FederationName
+            // 
+            this.FederationName.DataPropertyName = "FederationName";
+            this.FederationName.HeaderText = "Name";
+            this.FederationName.Name = "FederationName";
+            // 
+            // FederatedNumber
+            // 
+            this.FederatedNumber.DataPropertyName = "FederatedNumber";
+            this.FederatedNumber.HeaderText = "Number";
+            this.FederatedNumber.Name = "FederatedNumber";
+            // 
             // frmFederation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(774, 273);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dgvFederation);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmFederation";
             this.Text = "Mantenimiento de Federaciones";
+            this.Load += new System.EventHandler(this.frmFederation_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
@@ -205,5 +246,9 @@
         private System.Windows.Forms.DataGridView dgvFederation;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FederationName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FederatedNumber;
     }
 }
