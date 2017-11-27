@@ -45,6 +45,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFederation)).BeginInit();
@@ -56,11 +58,11 @@
             this.groupBox1.Controls.Add(this.txtFedeId);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(505, 33);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Location = new System.Drawing.Point(379, 27);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(456, 101);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Size = new System.Drawing.Size(342, 82);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Federación:";
@@ -69,36 +71,38 @@
             // txtFedeName
             // 
             this.txtFedeName.Enabled = false;
-            this.txtFedeName.Location = new System.Drawing.Point(115, 58);
-            this.txtFedeName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtFedeName.Location = new System.Drawing.Point(86, 47);
+            this.txtFedeName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtFedeName.Name = "txtFedeName";
-            this.txtFedeName.Size = new System.Drawing.Size(297, 22);
+            this.txtFedeName.Size = new System.Drawing.Size(224, 20);
             this.txtFedeName.TabIndex = 3;
             // 
             // txtFedeId
             // 
             this.txtFedeId.Enabled = false;
-            this.txtFedeId.Location = new System.Drawing.Point(115, 26);
-            this.txtFedeId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtFedeId.Location = new System.Drawing.Point(86, 21);
+            this.txtFedeId.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtFedeId.Name = "txtFedeId";
-            this.txtFedeId.Size = new System.Drawing.Size(57, 22);
+            this.txtFedeId.Size = new System.Drawing.Size(44, 20);
             this.txtFedeId.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 58);
+            this.label2.Location = new System.Drawing.Point(7, 47);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 17);
+            this.label2.Size = new System.Drawing.Size(47, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "Nombre:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(5, 26);
+            this.label1.Location = new System.Drawing.Point(4, 21);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(98, 17);
+            this.label1.Size = new System.Drawing.Size(75, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Id Federación:";
             // 
@@ -112,34 +116,34 @@
             this.salirToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1032, 28);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(774, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // guardarToolStripMenuItem
             // 
             this.guardarToolStripMenuItem.Name = "guardarToolStripMenuItem";
-            this.guardarToolStripMenuItem.Size = new System.Drawing.Size(64, 24);
+            this.guardarToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
             this.guardarToolStripMenuItem.Text = "Nuevo";
             this.guardarToolStripMenuItem.Click += new System.EventHandler(this.guardarToolStripMenuItem_Click);
             // 
             // actualizarToolStripMenuItem
             // 
             this.actualizarToolStripMenuItem.Name = "actualizarToolStripMenuItem";
-            this.actualizarToolStripMenuItem.Size = new System.Drawing.Size(85, 24);
+            this.actualizarToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
             this.actualizarToolStripMenuItem.Text = "Modificar";
             // 
             // eliminarToolStripMenuItem
             // 
             this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
-            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(75, 24);
+            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
             this.eliminarToolStripMenuItem.Text = "Eliminar";
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(50, 24);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
             this.salirToolStripMenuItem.Text = "Salir";
             // 
             // dgvFederation
@@ -149,11 +153,11 @@
             this.Id,
             this.FederationName,
             this.FederatedNumber});
-            this.dgvFederation.Location = new System.Drawing.Point(17, 91);
-            this.dgvFederation.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvFederation.Location = new System.Drawing.Point(13, 74);
+            this.dgvFederation.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvFederation.Name = "dgvFederation";
             this.dgvFederation.RowTemplate.Height = 24;
-            this.dgvFederation.Size = new System.Drawing.Size(483, 234);
+            this.dgvFederation.Size = new System.Drawing.Size(362, 190);
             this.dgvFederation.TabIndex = 2;
             this.dgvFederation.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFederation_CellContentClick);
             // 
@@ -177,10 +181,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(753, 140);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Location = new System.Drawing.Point(565, 114);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 28);
+            this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 3;
             this.button1.Text = "Guardar";
             this.button1.UseVisualStyleBackColor = true;
@@ -188,30 +191,46 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(861, 140);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Location = new System.Drawing.Point(646, 114);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 28);
+            this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 4;
             this.button2.Text = "Salir";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(399, 47);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button3.Location = new System.Drawing.Point(299, 38);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(100, 28);
+            this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 5;
             this.button3.Text = "Buscar";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(63, 40);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(230, 20);
+            this.textBox1.TabIndex = 6;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(14, 43);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(43, 13);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Buscar:";
+            // 
             // frmFederation
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1032, 336);
+            this.ClientSize = new System.Drawing.Size(774, 273);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -219,7 +238,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmFederation";
             this.Text = "Mantenimiento de Federaciones";
             this.Load += new System.EventHandler(this.frmFederation_Load);
@@ -252,5 +271,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn FederationName;
         private System.Windows.Forms.DataGridViewTextBoxColumn FederatedNumber;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label3;
     }
 }

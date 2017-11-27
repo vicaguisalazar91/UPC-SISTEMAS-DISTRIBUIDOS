@@ -15,6 +15,8 @@ namespace UI
 {
     public partial class frmFederation : Form
     {
+
+        string opcion = "INSERT";
         public frmFederation()
         {
             InitializeComponent();
@@ -39,8 +41,9 @@ namespace UI
 
         private void guardarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //txtFedeId.Enabled = true;
+            txtFedeId.Enabled = true;
             txtFedeName.Enabled = true;
+            
         }
 
         private void frmFederation_Load(object sender, EventArgs e)
@@ -55,12 +58,13 @@ namespace UI
 
         private void dgvFederation_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            /*
             var federation = new Federation();
             federation.FederationID = Int32.Parse( dgvFederation.SelectedRows[0].Cells["FederationID"].Value.ToString());
             federation.FederationName = dgvFederation.SelectedRows[0].Cells["FederationName"].Value.ToString();
             federation.FederatedNumber = Int32.Parse(dgvFederation.SelectedRows[0].Cells["FederatedNumber"].Value.ToString());
 
-            
+*/            
 
 
 
@@ -69,11 +73,25 @@ namespace UI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Federation oFederation = new Federation();
-            oFederation.FederationName = txtFedeName.Text;
-            oFederation.FederatedNumber = 1;
-            oFederation.FederationID = 1;
-            ServiceWebBL.addFederation(oFederation);
+            if (opcion == "UPDATE")
+            {
+                Federation oFederation = new Federation();
+                oFederation.FederationName = txtFedeName.Text;
+                oFederation.FederatedNumber = 1;
+                oFederation.FederationID = int.Parse(txtFedeId.Text);
+                ServiceWebBL.addFederation(oFederation);
+            }
+            else
+            {
+                Federation oFederation = new Federation();
+                oFederation.FederationName = txtFedeName.Text;
+                oFederation.FederatedNumber = 1;
+                oFederation.FederationID = int.Parse(txtFedeId.Text);
+                ServiceWebBL.addFederation(oFederation);
+
+            }
+
+            
         }
     }
 }
