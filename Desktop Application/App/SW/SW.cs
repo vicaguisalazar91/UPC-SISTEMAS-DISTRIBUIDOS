@@ -15,7 +15,8 @@ namespace SW
         public static void addFederation(Federation oFederation) {
 
             MySoapServer.MySoapServer SWaddFederation = new MySoapServer.MySoapServer();
-            SWaddFederation.addFederation(oFederation.FederationID.ToString(), oFederation.FederationName, oFederation.FederatedNumber.ToString());
+            String Response = SWaddFederation.addFederation(oFederation.FederationID.ToString(), oFederation.FederationName, oFederation.FederatedNumber.ToString());
+            Console.ReadKey();
 
         }
 

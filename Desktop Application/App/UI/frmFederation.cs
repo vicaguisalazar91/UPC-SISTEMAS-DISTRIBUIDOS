@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Model.AccesoDatos;
 using DAL;
+using BL;
 
 namespace UI
 {
@@ -64,6 +65,15 @@ namespace UI
 
 
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Federation oFederation = new Federation();
+            oFederation.FederationName = txtFedeName.Text;
+            oFederation.FederatedNumber = 1;
+            oFederation.FederationID = 1;
+            ServiceWebBL.addFederation(oFederation);
         }
     }
 }
