@@ -1,0 +1,4 @@
+2017-12-17 10:44:08,318 BL.ConfigurationBL.DeserializeXMLFileToObject [Linea 78]  DEBUG DeserializeXMLFileToObject [SUCCESS]  Se cargó correctamente cargado de la ruta : D:\UPC\Distribuidos\SwDistribuidos\SwAplication\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\TEST\bin\Debug\Config.xml .
+2017-12-17 10:44:08,447 BL.ConfigurationBL.cargarConfiguracion [Linea 39]  DEBUG  [SUCCESS]  Se cargó correctamente la configuración. 
+2017-12-17 10:44:21,316 BL.ConfigurationBL.DeserializeXMLFileToObject [Linea 78]  DEBUG DeserializeXMLFileToObject [SUCCESS]  Se cargó correctamente cargado de la ruta : D:\UPC\Distribuidos\SwDistribuidos\SwAplication\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\TEST\bin\Debug\Config.xml .
+2017-12-17 10:44:21,366 BL.ConfigurationBL.cargarConfiguracion [Linea 39]  DEBUG  [SUCCESS]  Se cargó correctamente la configuración. 

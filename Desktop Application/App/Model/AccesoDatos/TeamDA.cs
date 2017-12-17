@@ -11,13 +11,14 @@ using System.Web;
 
 namespace Model.AccesoDatos
 {
-    public class SkierDA
-    {
-        public List<SkierModel> GetSkierList()
+    public class TeamDA
+    {/*
+        public List<TeamModel> GetTeamList()
         {
-            List<SkierModel> skierList = new List<SkierModel>();
+            List<TeamModel> TeamList = new List<TeamModel>();
+
             string key = "123456";
-            string uri = "http://ddczone.com/olympics/SkierSW/";
+            string uri = "http://ddczone.com/olympics/TeamSW/";
             HttpWebRequest request = WebRequest.Create(uri) as HttpWebRequest;
             request.Headers.Add("X-API-KEY", HttpUtility.UrlEncode(key));
 
@@ -30,20 +31,21 @@ namespace Model.AccesoDatos
                 //Leer el resultado de la llamada
                 Stream stream1 = response.GetResponseStream();
                 StreamReader sr = new StreamReader(stream1);
-                List<SkierModel> lstskier = JsonConvert.DeserializeObject<List<SkierModel>>(sr.ReadToEnd());
-                foreach (SkierModel oSkier in lstskier)
+                List<TeamModel> lstTeam = JsonConvert.DeserializeObject<List<TeamModel>>(sr.ReadToEnd());
+                foreach (TeamModel oTeam in lstTeam)
                 {
-                    SkierModel oskier = new SkierModel();
-                    oskier.NumberId = oSkier.NumberId;
-                    oskier.FederationID = oSkier.FederationID;
-                    oskier.SkierName = oskier.SkierName;
-                    
+                    //Console.WriteLine(oFederation.FederatedNumber);
+                    //Console.WriteLine(oFederation.FederationName);
+                    TeamModel Team = new TeamModel();
+                    Team.NumberId = oTeam.NumberId;
+                    //Team.TeamName = oTeam.TeamName;
 
-                    skierList.Add(oskier);
+                    TeamList.Add(Team);
                 }
             }
 
-            return skierList;
+            return TeamList;
         }
+        */
     }
 }
