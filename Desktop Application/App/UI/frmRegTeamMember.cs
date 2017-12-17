@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Model.AccesoDatos;
+using DAL;
+using BL;
 
 namespace UI
 {
@@ -15,6 +18,11 @@ namespace UI
         public frmRegTeamMember()
         {
             InitializeComponent();
+        }
+
+        private void frmRegTeamMember_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

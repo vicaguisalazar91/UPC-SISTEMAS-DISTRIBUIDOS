@@ -45,5 +45,10 @@ namespace UI
             //ServiceWebBL.a(oFederation);
 
         }
+
+        private void frmSkier_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

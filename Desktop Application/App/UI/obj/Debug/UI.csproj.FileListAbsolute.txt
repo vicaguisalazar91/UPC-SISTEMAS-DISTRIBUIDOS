@@ -13,6 +13,7 @@ E:\Desktop Application\App\UI\obj\Debug\UI.Properties.Resources.resources
 E:\Desktop Application\App\UI\obj\Debug\UI.csproj.GenerateResource.Cache
 E:\Desktop Application\App\UI\obj\Debug\UI.exe
 E:\Desktop Application\App\UI\obj\Debug\UI.pdb
+<<<<<<< HEAD
 D:\UPC\Distribuidos\SwDistribuidos\SwAplication\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\obj\Debug\UI.csprojResolveAssemblyReference.cache
 D:\UPC\Distribuidos\SwDistribuidos\SwAplication\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\obj\Debug\UI.frmRegTeamMember.resources
 D:\UPC\Distribuidos\SwDistribuidos\SwAplication\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\obj\Debug\UI.frmSkier.resources
@@ -22,6 +23,42 @@ D:\UPC\Distribuidos\SwDistribuidos\SwAplication\UPC-SISTEMAS-DISTRIBUIDOS\Deskto
 D:\UPC\Distribuidos\SwDistribuidos\SwAplication\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\obj\Debug\UI.frmTeam.resources
 D:\UPC\Distribuidos\SwDistribuidos\SwAplication\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\obj\Debug\UI.Properties.Resources.resources
 D:\UPC\Distribuidos\SwDistribuidos\SwAplication\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\obj\Debug\UI.csproj.GenerateResource.Cache
+=======
+C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\bin\Debug\UI.exe.config
+C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\bin\Debug\UI.exe
+C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\bin\Debug\UI.pdb
+C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\bin\Debug\BL.dll
+C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\bin\Debug\DAL.dll
+C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\bin\Debug\EntityFramework.dll
+C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\bin\Debug\log4net.dll
+C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\bin\Debug\Model.dll
+C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\bin\Debug\SW.dll
+C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\bin\Debug\BL.pdb
+C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\bin\Debug\BL.dll.config
+C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\bin\Debug\DAL.pdb
+C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\bin\Debug\DAL.dll.config
+C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\bin\Debug\Model.pdb
+C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\bin\Debug\EntityFramework.xml
+C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\bin\Debug\log4net.xml
+C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\bin\Debug\SW.pdb
+C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\bin\Debug\SW.dll.config
+C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\obj\Debug\UI.csprojResolveAssemblyReference.cache
+C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\obj\Debug\UI.frmRegTeamMember.resources
+C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\obj\Debug\UI.frmSkier.resources
+C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\obj\Debug\UI.frmFederation.resources
+C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\obj\Debug\UI.frmLogin.resources
+C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\obj\Debug\UI.frmMenu.resources
+C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\obj\Debug\UI.frmTeam.resources
+C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\obj\Debug\UI.Properties.Resources.resources
+C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\obj\Debug\UI.csproj.GenerateResource.Cache
+C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\obj\Debug\UI.csproj.CoreCompileInputs.cache
+C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\obj\Debug\UI.exe
+C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\obj\Debug\UI.pdb
+>>>>>>> 44789b580870c2c7f023ba4d791e2aea84b4388b
 D:\UPC\Distribuidos\SwDistribuidos\SwAplication\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\bin\Debug\UI.exe.config
 D:\UPC\Distribuidos\SwDistribuidos\SwAplication\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\bin\Debug\UI.exe
 D:\UPC\Distribuidos\SwDistribuidos\SwAplication\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\bin\Debug\UI.pdb
@@ -41,6 +78,15 @@ D:\UPC\Distribuidos\SwDistribuidos\SwAplication\UPC-SISTEMAS-DISTRIBUIDOS\Deskto
 D:\UPC\Distribuidos\SwDistribuidos\SwAplication\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\bin\Debug\log4net.xml
 D:\UPC\Distribuidos\SwDistribuidos\SwAplication\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\bin\Debug\Newtonsoft.Json.xml
 D:\UPC\Distribuidos\SwDistribuidos\SwAplication\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\bin\Debug\SW.pdb
+D:\UPC\Distribuidos\SwDistribuidos\SwAplication\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\obj\Debug\UI.csprojResolveAssemblyReference.cache
+D:\UPC\Distribuidos\SwDistribuidos\SwAplication\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\obj\Debug\UI.frmRegTeamMember.resources
+D:\UPC\Distribuidos\SwDistribuidos\SwAplication\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\obj\Debug\UI.frmSkier.resources
+D:\UPC\Distribuidos\SwDistribuidos\SwAplication\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\obj\Debug\UI.frmFederation.resources
+D:\UPC\Distribuidos\SwDistribuidos\SwAplication\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\obj\Debug\UI.frmLogin.resources
+D:\UPC\Distribuidos\SwDistribuidos\SwAplication\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\obj\Debug\UI.frmMenu.resources
+D:\UPC\Distribuidos\SwDistribuidos\SwAplication\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\obj\Debug\UI.frmTeam.resources
+D:\UPC\Distribuidos\SwDistribuidos\SwAplication\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\obj\Debug\UI.Properties.Resources.resources
+D:\UPC\Distribuidos\SwDistribuidos\SwAplication\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\obj\Debug\UI.csproj.GenerateResource.Cache
 D:\UPC\Distribuidos\SwDistribuidos\SwAplication\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\obj\Debug\UI.exe
 D:\UPC\Distribuidos\SwDistribuidos\SwAplication\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\obj\Debug\UI.pdb
 C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\bin\Debug\UI.exe.config
