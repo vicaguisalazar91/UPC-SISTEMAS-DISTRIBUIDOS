@@ -1,0 +1,12 @@
+<configuration>
+	<connectiondb>
+		<dbname>DB_Olympics</dbname>
+		<servername>DESKTOP-IR9VGH8</servername>
+		<username>sa</username>
+		<password>Home17121991</password>
+	</connectiondb>
+	<webserviceclient>
+		<soapurl></soapurl>
+		<resturl></resturl>
+	</webserviceclient>
+</configuration>

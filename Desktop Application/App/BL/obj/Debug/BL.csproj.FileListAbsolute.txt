@@ -26,14 +26,14 @@ C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Applicat
 C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\BL\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\BL\bin\Debug\SW.dll
 C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\BL\bin\Debug\DAL.pdb
+C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\BL\bin\Debug\DAL.dll.config
 C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\BL\bin\Debug\SW.pdb
+C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\BL\bin\Debug\SW.dll.config
 C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\BL\bin\Debug\EntityFramework.xml
 C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\BL\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\BL\bin\Debug\log4net.xml
 C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\BL\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\BL\obj\Debug\BL.csprojResolveAssemblyReference.cache
+C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\BL\obj\Debug\BL.csproj.CoreCompileInputs.cache
 C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\BL\obj\Debug\BL.dll
 C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\BL\obj\Debug\BL.pdb
-C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\BL\bin\Debug\DAL.dll.config
-C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\BL\bin\Debug\SW.dll.config
-C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\BL\obj\Debug\BL.csproj.CoreCompileInputs.cache
