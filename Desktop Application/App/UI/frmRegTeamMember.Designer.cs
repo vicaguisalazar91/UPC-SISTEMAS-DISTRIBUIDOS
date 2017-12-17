@@ -56,9 +56,9 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(476, 26);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(304, 71);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
@@ -68,7 +68,7 @@
             // 
             this.cmbSkier.FormattingEnabled = true;
             this.cmbSkier.Location = new System.Drawing.Point(69, 42);
-            this.cmbSkier.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbSkier.Margin = new System.Windows.Forms.Padding(2);
             this.cmbSkier.Name = "cmbSkier";
             this.cmbSkier.Size = new System.Drawing.Size(222, 21);
             this.cmbSkier.TabIndex = 3;
@@ -77,7 +77,7 @@
             // 
             this.cmbTeam.FormattingEnabled = true;
             this.cmbTeam.Location = new System.Drawing.Point(69, 18);
-            this.cmbTeam.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbTeam.Margin = new System.Windows.Forms.Padding(2);
             this.cmbTeam.Name = "cmbTeam";
             this.cmbTeam.Size = new System.Drawing.Size(222, 21);
             this.cmbTeam.TabIndex = 2;
@@ -145,7 +145,7 @@
             // 
             this.dgvTeamMember.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTeamMember.Location = new System.Drawing.Point(9, 51);
-            this.dgvTeamMember.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvTeamMember.Margin = new System.Windows.Forms.Padding(2);
             this.dgvTeamMember.Name = "dgvTeamMember";
             this.dgvTeamMember.RowTemplate.Height = 24;
             this.dgvTeamMember.Size = new System.Drawing.Size(463, 265);
@@ -154,7 +154,7 @@
             // btnFind
             // 
             this.btnFind.Location = new System.Drawing.Point(392, 28);
-            this.btnFind.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnFind.Margin = new System.Windows.Forms.Padding(2);
             this.btnFind.Name = "btnFind";
             this.btnFind.Size = new System.Drawing.Size(80, 19);
             this.btnFind.TabIndex = 9;
@@ -174,7 +174,7 @@
             // txtTeamMemberFind
             // 
             this.txtTeamMemberFind.Location = new System.Drawing.Point(110, 27);
-            this.txtTeamMemberFind.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTeamMemberFind.Margin = new System.Windows.Forms.Padding(2);
             this.txtTeamMemberFind.Name = "txtTeamMemberFind";
             this.txtTeamMemberFind.Size = new System.Drawing.Size(278, 20);
             this.txtTeamMemberFind.TabIndex = 7;
@@ -210,9 +210,10 @@
             this.Controls.Add(this.dgvTeamMember);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmRegTeamMember";
             this.Text = "Registro de Integrantes de Equipo";
+            this.Load += new System.EventHandler(this.frmRegTeamMember_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);

@@ -52,7 +52,7 @@
             // 
             this.dgvTeam.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTeam.Location = new System.Drawing.Point(11, 26);
-            this.dgvTeam.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvTeam.Margin = new System.Windows.Forms.Padding(2);
             this.dgvTeam.Name = "dgvTeam";
             this.dgvTeam.RowTemplate.Height = 24;
             this.dgvTeam.Size = new System.Drawing.Size(348, 221);
@@ -67,9 +67,9 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(363, 26);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(328, 91);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
@@ -78,7 +78,7 @@
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(86, 66);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(224, 20);
             this.textBox1.TabIndex = 5;
@@ -96,7 +96,7 @@
             // txtTeamName
             // 
             this.txtTeamName.Location = new System.Drawing.Point(86, 43);
-            this.txtTeamName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTeamName.Margin = new System.Windows.Forms.Padding(2);
             this.txtTeamName.Name = "txtTeamName";
             this.txtTeamName.Size = new System.Drawing.Size(224, 20);
             this.txtTeamName.TabIndex = 3;
@@ -104,7 +104,7 @@
             // txtTeamId
             // 
             this.txtTeamId.Location = new System.Drawing.Point(86, 21);
-            this.txtTeamId.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTeamId.Margin = new System.Windows.Forms.Padding(2);
             this.txtTeamId.Name = "txtTeamId";
             this.txtTeamId.Size = new System.Drawing.Size(44, 20);
             this.txtTeamId.TabIndex = 2;
@@ -196,9 +196,10 @@
             this.Controls.Add(this.dgvTeam);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmTeam";
             this.Text = "Mantenimiento de Equipos";
+            this.Load += new System.EventHandler(this.frmTeam_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTeam)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
