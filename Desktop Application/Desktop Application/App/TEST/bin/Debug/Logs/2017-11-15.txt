@@ -1,0 +1,2 @@
+2017-11-15 08:04:21,810 BL.ConfigurationBL.DeserializeXMLFileToObject [Linea 78]  DEBUG DeserializeXMLFileToObject [SUCCESS]  Se cargó correctamente cargado de la ruta : C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\TEST\bin\Debug\Config.xml .
+2017-11-15 08:04:21,880 BL.ConfigurationBL.cargarConfiguracion [Linea 39]  DEBUG  [SUCCESS]  Se cargó correctamente la configuración. 
