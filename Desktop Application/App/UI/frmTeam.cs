@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Model.AccesoDatos;
 using DAL;
-using BL;
+
 
 namespace UI
 {
@@ -18,11 +18,17 @@ namespace UI
         public frmTeam()
         {
             InitializeComponent();
+
         }
 
         private void frmTeam_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string local;
         }
     }
 }
