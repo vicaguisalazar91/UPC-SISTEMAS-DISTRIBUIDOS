@@ -32,33 +32,3 @@ C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Applicat
 C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\obj\Debug\UI.csproj.CoreCompileInputs.cache
 C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\obj\Debug\UI.exe
 C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\obj\Debug\UI.pdb
-D:\UPC\Distribuidos\SwDistribuidos\SwAplication\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\bin\Debug\UI.exe.config
-D:\UPC\Distribuidos\SwDistribuidos\SwAplication\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\obj\Debug\UI.exe
-D:\UPC\Distribuidos\SwDistribuidos\SwAplication\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\obj\Debug\UI.pdb
-D:\UPC\Distribuidos\SwDistribuidos\SwAplication\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\bin\Debug\UI.exe
-D:\UPC\Distribuidos\SwDistribuidos\SwAplication\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\bin\Debug\UI.pdb
-D:\UPC\Distribuidos\SwDistribuidos\SwAplication\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\bin\Debug\BL.dll
-D:\UPC\Distribuidos\SwDistribuidos\SwAplication\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\bin\Debug\DAL.dll
-D:\UPC\Distribuidos\SwDistribuidos\SwAplication\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\bin\Debug\EntityFramework.dll
-D:\UPC\Distribuidos\SwDistribuidos\SwAplication\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\bin\Debug\EntityFramework.SqlServer.dll
-D:\UPC\Distribuidos\SwDistribuidos\SwAplication\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\bin\Debug\log4net.dll
-D:\UPC\Distribuidos\SwDistribuidos\SwAplication\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\bin\Debug\Model.dll
-D:\UPC\Distribuidos\SwDistribuidos\SwAplication\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\bin\Debug\Newtonsoft.Json.dll
-D:\UPC\Distribuidos\SwDistribuidos\SwAplication\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\bin\Debug\SW.dll
-D:\UPC\Distribuidos\SwDistribuidos\SwAplication\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\bin\Debug\BL.pdb
-D:\UPC\Distribuidos\SwDistribuidos\SwAplication\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\bin\Debug\DAL.pdb
-D:\UPC\Distribuidos\SwDistribuidos\SwAplication\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\bin\Debug\Model.pdb
-D:\UPC\Distribuidos\SwDistribuidos\SwAplication\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\bin\Debug\EntityFramework.xml
-D:\UPC\Distribuidos\SwDistribuidos\SwAplication\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\bin\Debug\EntityFramework.SqlServer.xml
-D:\UPC\Distribuidos\SwDistribuidos\SwAplication\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\bin\Debug\log4net.xml
-D:\UPC\Distribuidos\SwDistribuidos\SwAplication\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\bin\Debug\Newtonsoft.Json.xml
-D:\UPC\Distribuidos\SwDistribuidos\SwAplication\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\bin\Debug\SW.pdb
-D:\UPC\Distribuidos\SwDistribuidos\SwAplication\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\obj\Debug\UI.csprojResolveAssemblyReference.cache
-D:\UPC\Distribuidos\SwDistribuidos\SwAplication\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\obj\Debug\UI.frmRegTeamMember.resources
-D:\UPC\Distribuidos\SwDistribuidos\SwAplication\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\obj\Debug\UI.frmSkier.resources
-D:\UPC\Distribuidos\SwDistribuidos\SwAplication\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\obj\Debug\UI.frmFederation.resources
-D:\UPC\Distribuidos\SwDistribuidos\SwAplication\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\obj\Debug\UI.frmLogin.resources
-D:\UPC\Distribuidos\SwDistribuidos\SwAplication\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\obj\Debug\UI.frmMenu.resources
-D:\UPC\Distribuidos\SwDistribuidos\SwAplication\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\obj\Debug\UI.frmTeam.resources
-D:\UPC\Distribuidos\SwDistribuidos\SwAplication\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\obj\Debug\UI.Properties.Resources.resources
-D:\UPC\Distribuidos\SwDistribuidos\SwAplication\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\UI\obj\Debug\UI.csproj.GenerateResource.Cache

@@ -17,6 +17,12 @@ namespace BL
 
         }
 
+        public static void addSkier(Skier oSkier) {
+            SW.SW.addskier(oSkier);
+        }
+
+
+
 
     }
 }

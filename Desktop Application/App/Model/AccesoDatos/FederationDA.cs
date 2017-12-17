@@ -9,9 +9,6 @@ using Newtonsoft.Json;
 using Model.Model;
 using BL;
 
-using System.Web;
-
-
 namespace Model.AccesoDatos
 {
     public class FederationDA
@@ -21,13 +18,8 @@ namespace Model.AccesoDatos
         {
             List<FederationModel> fedetationList = new List<FederationModel>();
 
-            string key = "123456";
             string uri = "http://ddczone.com/olympics/FederationSW/";
             HttpWebRequest request = WebRequest.Create(uri) as HttpWebRequest;
-            request.Headers.Add("X-API-KEY", HttpUtility.UrlEncode(key));
-
-
-            
 
             request.Method = "GET";
             request.ContentType = "application/json";

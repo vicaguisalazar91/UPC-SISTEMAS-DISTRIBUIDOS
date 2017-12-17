@@ -20,6 +20,12 @@ namespace SW
 
         }
 
+
+        public static void addskier(Skier oSkier) {
+            MySoapServer.MySoapServer SWAddSkier = new MySoapServer.MySoapServer();
+            string response = SWAddSkier.addSkier(oSkier.NumberId.ToString(),oSkier.SkierName.ToString(), oSkier.Birthdate.Value.ToString(), oSkier.FederationID.ToString());
+        }
+
        
     }
 }
