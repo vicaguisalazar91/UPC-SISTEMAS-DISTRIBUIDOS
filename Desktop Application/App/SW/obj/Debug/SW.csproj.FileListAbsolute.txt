@@ -1,3 +1,15 @@
+D:\UPC\Distribuidos\SwDistribuidos\SwAplication\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\SW\bin\Debug\SW.dll.config
+D:\UPC\Distribuidos\SwDistribuidos\SwAplication\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\SW\bin\Debug\SW.dll
+D:\UPC\Distribuidos\SwDistribuidos\SwAplication\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\SW\bin\Debug\SW.pdb
+D:\UPC\Distribuidos\SwDistribuidos\SwAplication\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\SW\bin\Debug\DAL.dll
+D:\UPC\Distribuidos\SwDistribuidos\SwAplication\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\SW\bin\Debug\Newtonsoft.Json.dll
+D:\UPC\Distribuidos\SwDistribuidos\SwAplication\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\SW\bin\Debug\EntityFramework.dll
+D:\UPC\Distribuidos\SwDistribuidos\SwAplication\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\SW\bin\Debug\DAL.pdb
+D:\UPC\Distribuidos\SwDistribuidos\SwAplication\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\SW\bin\Debug\Newtonsoft.Json.xml
+D:\UPC\Distribuidos\SwDistribuidos\SwAplication\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\SW\bin\Debug\EntityFramework.xml
+D:\UPC\Distribuidos\SwDistribuidos\SwAplication\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\SW\obj\Debug\SW.csprojResolveAssemblyReference.cache
+D:\UPC\Distribuidos\SwDistribuidos\SwAplication\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\SW\obj\Debug\SW.dll
+D:\UPC\Distribuidos\SwDistribuidos\SwAplication\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\SW\obj\Debug\SW.pdb
 C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\SW\bin\Debug\SW.dll.config
 C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\SW\bin\Debug\SW.dll
 C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\SW\bin\Debug\SW.pdb
@@ -12,15 +24,3 @@ C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Applicat
 C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\SW\obj\Debug\SW.csproj.CoreCompileInputs.cache
 C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\SW\obj\Debug\SW.dll
 C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\SW\obj\Debug\SW.pdb
-D:\UPC\Distribuidos\SwDistribuidos\SwAplication\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\SW\bin\Debug\SW.dll.config
-D:\UPC\Distribuidos\SwDistribuidos\SwAplication\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\SW\bin\Debug\SW.dll
-D:\UPC\Distribuidos\SwDistribuidos\SwAplication\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\SW\bin\Debug\SW.pdb
-D:\UPC\Distribuidos\SwDistribuidos\SwAplication\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\SW\bin\Debug\DAL.dll
-D:\UPC\Distribuidos\SwDistribuidos\SwAplication\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\SW\bin\Debug\Newtonsoft.Json.dll
-D:\UPC\Distribuidos\SwDistribuidos\SwAplication\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\SW\bin\Debug\EntityFramework.dll
-D:\UPC\Distribuidos\SwDistribuidos\SwAplication\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\SW\bin\Debug\DAL.pdb
-D:\UPC\Distribuidos\SwDistribuidos\SwAplication\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\SW\bin\Debug\Newtonsoft.Json.xml
-D:\UPC\Distribuidos\SwDistribuidos\SwAplication\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\SW\bin\Debug\EntityFramework.xml
-D:\UPC\Distribuidos\SwDistribuidos\SwAplication\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\SW\obj\Debug\SW.csprojResolveAssemblyReference.cache
-D:\UPC\Distribuidos\SwDistribuidos\SwAplication\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\SW\obj\Debug\SW.dll
-D:\UPC\Distribuidos\SwDistribuidos\SwAplication\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\SW\obj\Debug\SW.pdb

@@ -1,0 +1,7 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/Desktop Application/App/DAL/obj/Debug
+/Desktop Application/App/UI/obj/Debug/TempPE
+/Desktop Application/App/UI/obj/Debug

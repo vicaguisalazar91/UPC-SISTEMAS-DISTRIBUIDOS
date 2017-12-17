@@ -8,6 +8,7 @@ using DAL;
 using System.IO;
 using System.Net;
 using Newtonsoft.Json;
+using System.Web;
 
 namespace TEST
 {
@@ -34,10 +35,11 @@ namespace TEST
             //ServiceWebBL.addFederation(oFederation);
 
 
-
+            string key = "123456";
             string uri = "http://ddczone.com/olympics/FederationSW/";
             HttpWebRequest request = WebRequest.Create(uri) as HttpWebRequest;
-           
+            request.Headers.Add("X-API-KEY", HttpUtility.UrlEncode(key));
+
             request.Method = "GET";
             request.ContentType = "application/json";
 
