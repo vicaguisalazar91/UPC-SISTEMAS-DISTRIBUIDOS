@@ -26,3 +26,4 @@ C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Applicat
 C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
 C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\DAL\obj\Debug\DAL.dll
 C:\Users\Vic Aguilar\Documents\GitHub\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\DAL\obj\Debug\DAL.pdb
+D:\UPC\Distribuidos\SwDistribuidos\SwAplication\UPC-SISTEMAS-DISTRIBUIDOS\Desktop Application\App\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache

@@ -116,10 +116,7 @@ namespace TEST
             Skier oSkier = new Skier();
 
 
-            ServiceWebBL.addSkier(oSkier);
-            
-
-
+            ServiceWebBL.addSkier(oSkier);            
         }
 
 

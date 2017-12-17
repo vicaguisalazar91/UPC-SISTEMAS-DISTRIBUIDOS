@@ -38,12 +38,14 @@ namespace UI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Skier oSkier = new Skier();
-            oSkier.SkierName = txtSkierFullName.Text;
-            oSkier.NumberId = int.Parse(txtSkierId.Text);
-            //oSkier. = int.Parse(txtFedeId.Text);
-            //ServiceWebBL.a(oFederation);
+            Skier oskier = new Skier();
+            oskier.NumberId = int.Parse(txtSkierId.Text);
+            oskier.FederationID = 1;
+            oskier.SkierName = txtSkierFullName.Text;
+            oskier.Birthdate = DateTime.Now;
+            
 
+            ServiceWebBL.addSkier(oskier);
         }
 
         private void frmSkier_Load(object sender, EventArgs e)
