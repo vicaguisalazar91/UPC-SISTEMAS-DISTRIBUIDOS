@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="urn:MySoapServer" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="urn:MySoapServer" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="urn:MySoapServer">
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <xsd:import namespace="http://schemas.xmlsoap.org/wsdl/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="echoTestRequest">
+    <wsdl:part name="tmp" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="echoTestResponse">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="addSkierRequest">
+    <wsdl:part name="NumberId" type="xsd:string" />
+    <wsdl:part name="SkierName" type="xsd:string" />
+    <wsdl:part name="Birthdate" type="xsd:string" />
+    <wsdl:part name="FederationID" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="addSkierResponse">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="addTeamMemberRequest">
+    <wsdl:part name="TeamMemberId" type="xsd:string" />
+    <wsdl:part name="TeamId" type="xsd:string" />
+    <wsdl:part name="NumberId" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="addTeamMemberResponse">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="addTeamRequest">
+    <wsdl:part name="TeamId" type="xsd:string" />
+    <wsdl:part name="TeamName" type="xsd:string" />
+    <wsdl:part name="CoachName" type="xsd:string" />
+    <wsdl:part name="SkiersNumber" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="addTeamResponse">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="addFederationRequest">
+    <wsdl:part name="FederationID" type="xsd:string" />
+    <wsdl:part name="FederationName" type="xsd:string" />
+    <wsdl:part name="FederatedNumber" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="addFederationResponse">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:portType name="MySoapServerPortType">
+    <wsdl:operation name="echoTest">
+      <documentation>Echo test</documentation>
+      <wsdl:input message="tns:echoTestRequest" />
+      <wsdl:output message="tns:echoTestResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="addSkier">
+      <documentation>add Federation</documentation>
+      <wsdl:input message="tns:addSkierRequest" />
+      <wsdl:output message="tns:addSkierResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="addTeamMember">
+      <documentation>add Federation</documentation>
+      <wsdl:input message="tns:addTeamMemberRequest" />
+      <wsdl:output message="tns:addTeamMemberResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="addTeam">
+      <documentation>add Federation</documentation>
+      <wsdl:input message="tns:addTeamRequest" />
+      <wsdl:output message="tns:addTeamResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="addFederation">
+      <documentation>add Federation</documentation>
+      <wsdl:input message="tns:addFederationRequest" />
+      <wsdl:output message="tns:addFederationResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MySoapServerBinding" type="tns:MySoapServerPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <wsdl:operation name="echoTest">
+      <soap:operation soapAction="urn:MySoapServer#echoTest" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:MySoapServer" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:MySoapServer" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addSkier">
+      <soap:operation soapAction="urn:MySoapServer#addFederation" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:MySoapServer" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:MySoapServer" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addTeamMember">
+      <soap:operation soapAction="urn:MySoapServer#addFederation" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:MySoapServer" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:MySoapServer" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addTeam">
+      <soap:operation soapAction="urn:MySoapServer#addFederation" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:MySoapServer" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:MySoapServer" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addFederation">
+      <soap:operation soapAction="urn:MySoapServer#addFederation" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:MySoapServer" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:MySoapServer" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MySoapServer">
+    <wsdl:port name="MySoapServerPort" binding="tns:MySoapServerBinding">
+      <soap:address location="http://ddczone.com/olympics/index.php" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
