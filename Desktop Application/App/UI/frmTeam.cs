@@ -21,6 +21,15 @@ namespace UI
 
         }
 
+        public void Buscar()
+        {
+            var skierDA = new SkierDA();
+            var skier = skierDA.GetSkierList();
+            dgvTeam.DataSource = null;
+            dgvTeam.Refresh();
+            dgvTeam.DataSource = skier;
+        }
+
         private void frmTeam_Load(object sender, EventArgs e)
         {
 
@@ -28,7 +37,12 @@ namespace UI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string local;
+            
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Buscar();
         }
     }
 }

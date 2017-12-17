@@ -46,6 +46,7 @@
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Entrenador = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTeam)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -58,11 +59,11 @@
             this.ID,
             this.Nombre,
             this.Entrenador});
-            this.dgvTeam.Location = new System.Drawing.Point(11, 26);
+            this.dgvTeam.Location = new System.Drawing.Point(11, 47);
             this.dgvTeam.Margin = new System.Windows.Forms.Padding(2);
             this.dgvTeam.Name = "dgvTeam";
             this.dgvTeam.RowTemplate.Height = 24;
-            this.dgvTeam.Size = new System.Drawing.Size(348, 221);
+            this.dgvTeam.Size = new System.Drawing.Size(348, 200);
             this.dgvTeam.TabIndex = 5;
             // 
             // groupBox1
@@ -210,11 +211,22 @@
             this.Entrenador.HeaderText = "Entrenador";
             this.Entrenador.Name = "Entrenador";
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(270, 19);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 14;
+            this.button3.Text = "Buscar";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // frmTeam
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(702, 255);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dgvTeam);
@@ -254,5 +266,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Entrenador;
+        private System.Windows.Forms.Button button3;
     }
 }
